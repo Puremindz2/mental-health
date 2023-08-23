@@ -20,9 +20,9 @@ const Home = () => {
         // Handle settings click
         history.push("/settings")
         break;
-      case 'chat':
+      case 'appointments':
         // Handle chat click
-        history.push("/chatapp")
+        history.push("/appointments")
         break;
       case 'resources':
         // Handle resources click
@@ -31,10 +31,6 @@ const Home = () => {
       case 'about':
         // Handle about us click
         history.push("/about")
-        break;
-      case 'logout':
-        // Handle logout click
-        history.push("/logout")
         break;
       default:
         break;
@@ -57,10 +53,9 @@ const Home = () => {
           <ul>
             <li onClick={() => handleMenuClick('profile')}>Profile</li>
             <li onClick={() => handleMenuClick('settings')}>Settings</li>
-            <li onClick={() => handleMenuClick('chat')}>Chat</li>
+            <li onClick={() => handleMenuClick('appointments')}>Appointments</li>
             <li onClick={() => handleMenuClick('resources')}>Resources</li>
             <li onClick={() => handleMenuClick('about')}>About Us</li>
-            <li onClick={() => handleMenuClick('logout')}>Log Out</li>
           </ul>
         </div>
       )}

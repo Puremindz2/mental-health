@@ -89,18 +89,18 @@ function Signup() {
         return;
       } 
 
-      if (error) {
-        console.error("Error inserting data:", error);
-        toast.error("Account creation failed. Please try again.");
-      } else {
+      if (event) {
+        console.event("Error inserting data:", event);
+        toast.event("Account creation failed. Please try again.");
+      } else if (error ){
         console.log("Data inserted successfully:", session);
         toast.success("Account created successfully!");
         // Redirect to the login page after successful account creation
         history.push("/login");
       }
-    } catch (error) {
-      console.error("Error connecting to Supabase:", error);
-      toast.error("Oops! Something went wrong. Please try again.");
+    } catch (event) {
+      console.event("Error connecting to Supabase:", event);
+      toast.event("Oops! Something went wrong. Please try again.");
     }
   };
   return (
@@ -173,7 +173,7 @@ function Signup() {
         />
         <label htmlFor="confirmPassword">Confirm Password:</label>
         <input
-          type="confirmPassword"
+          type="password"
           id="confirmPassword"
           name="confirmPassword"
           value={confirmPassword}

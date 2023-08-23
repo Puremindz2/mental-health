@@ -1,128 +1,98 @@
-import React, { useState } from 'react';
-import './Profile.css';
+import { useState, useEffect } from 'react'
+import { supabase } from '../supabaseClient'
 
-const Profile = () => {
-  const [username, setUsername] = useState('');
-  const [age, setAge] = useState('');
-  const [dob, setDob] = useState('');
-  const [bio, setBio] = useState('');
-  const [profileImage, setProfileImage] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(null);
+export default function Account({ session }) {
+  const [loading, setLoading] = useState(true)
+  const [username, setUsername] = useState(null)
+  const [website, setWebsite] = useState(null)
+  const [avatar_url, setAvatarUrl] = useState(null)
 
-  const handleImageUpload = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
+  useEffect(() => {
+    async function getProfile() {
+      setLoading(true)
+      const { user } = session
 
-    reader.onloadend = () => {
-      setSelectedImage(reader.result);
-    };
+      let { data, error } = await supabase
+        .from('profiles')
+        .select(`username, website, avatar_url`)
+        .eq('id', user.id)
+        .single()
 
-    if (file) {
-      reader.readAsDataURL(file);
+      if (error) {
+        console.warn(error)
+      } else if (data) {
+        setUsername(data.username)
+        setWebsite(data.website)
+        setAvatarUrl(data.avatar_url)
+      }
+
+      setLoading(false)
     }
-  };
 
-  const handleImageCapture = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
+    getProfile()
+  }, [session])
 
-    reader.onloadend = () => {
-      setSelectedImage(reader.result);
-    };
+  async function updateProfile(event, avatarUrl) {
+    event.preventDefault()
 
-    if (file) {
-      reader.readAsDataURL(file);
+    setLoading(true)
+    const { user } = session
+
+    const updates = {
+      id: user.id,
+      username,
+      website,
+      avatarUrl,
+      updated_at: new Date(),
     }
-  };
 
-  const handleImageDelete = () => {
-    setSelectedImage(null);
-  };
+    let { error } = await supabase.from('profiles').upsert(updates)
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    // Save user information to database or perform other actions
-    // ...
-  };
+    if (error) {
+      alert(error.message)
+    } else {
+      setAvatarUrl(avatarUrl)
+    }
+    setLoading(false)
+  }
 
   return (
-    <div className="profile-container">
-      <h1>Profile</h1>
-      <div className="profile-image-container">
-        {selectedImage ? (
-          <img className="profile-image" src={selectedImage} alt="Profile" />
-        ) : (
-          <div className="profile-placeholder">No Image</div>
-        )}
-        <div className="profile-upload">
-          <label htmlFor="image-upload" className="upload-label">
-            Upload Image
-          </label>
-          <input
-            type="file"
-            id="image-upload"
-            accept="image/*"
-            onChange={handleImageUpload}
-            capture="environment"
-          />
-          <input
-            type="file"
-            id="image-capture"
-            accept="image/*"
-            onChange={handleImageCapture}
-            capture="user"
-          />
-        </div>
-        {selectedImage && (
-          <button className="profile-delete" onClick={handleImageDelete}>
-            Delete
-          </button>
-        )}
+    <form onSubmit={updateProfile} className="form-widget">
+      <div>
+        <label htmlFor="email">Email</label>
+        <input id="email" type="text" value={session.user.email} disabled />
       </div>
-      <form onSubmit={handleFormSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="age">Age:</label>
-          <input
-            type="number"
-            id="age"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="dob">Date of Birth:</label>
-          <input
-            type="date"
-            id="dob"
-            value={dob}
-            onChange={(e) => setDob(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="bio">Bio:</label>
-          <textarea
-            id="bio"
-            value={bio}
-            onChange={(e) => setBio(e.target.value)}
-            required
-          ></textarea>
-        </div>
-        <button type="submit">Save</button>
-      </form>
-    </div>
-  );
-};
+      <div>
+        <label htmlFor="username">Name</label>
+        <input
+          id="username"
+          type="text"
+          required
+          value={username || ''}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          type="url"
+          value={website || ''}
+          onChange={(e) => setWebsite(e.target.value)}
+        />
+      </div>
 
-export default Profile;
+      <div>
+        <button className="button block primary" type="submit" disabled={loading}>
+          {loading ? 'Loading ...' : 'Update'}
+        </button>
+      </div>
+
+      <div>
+        <button className="button block" type="button" onClick={() => supabase.auth.signOut()}>
+          Sign Out
+        </button>
+      </div>
+    </form>
+  )
+}
