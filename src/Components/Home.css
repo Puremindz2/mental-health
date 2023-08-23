@@ -1,0 +1,81 @@
+.home-container {
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.chat-button {
+  position: fixed;
+  bottom: 50px;
+  right: 40px;
+  background-color: #229cff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-icon {
+  position: left;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-line {
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  transition: transform 0.3s ease;
+}
+
+.open .menu-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.open .menu-line:nth-child(2) {
+  opacity: 0;
+}
+
+.open .menu-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu-dropdown {
+  position: top;
+  bottom: 50px;
+  right: 20px;
+ 
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  font-size: 16px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #f2f2f2;
+}

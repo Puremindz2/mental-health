@@ -1,0 +1,88 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+.login-form {
+  animation: bounce 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+
+
+.emoji {
+  position: fixed;
+  font-size: 24px;
+  pointer-events: none;
+  animation: emojiAnimation linear infinite;
+}
+
+@keyframes emojiAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+.login.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.login.dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+  h2 {
+    margin-bottom: 30px;
+    font-size: 50px;
+    text-shadow: 0 0 3px #053163;
+  }
+  
+  label {
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: rgb(255, 80, 246);
+    box-shadow: 0 0 5px rgba(204, 58, 197, 0.5);
+  }
+
+  input:hover {
+    border-color: blue;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-shadow: 0 0 3px #22282e;
+  }
+  
+  button:hover {
+    background-color: #23b828;
+  }
+  

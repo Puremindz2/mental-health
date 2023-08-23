@@ -1,0 +1,9 @@
+/* src/components/ChatInput.module.css */
+.chatInput {
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 100%;
+    border-radius: 5px;
+    position: Bottom;
+  }
+  
