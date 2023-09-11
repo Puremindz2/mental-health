@@ -1,0 +1,125 @@
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle, #FF6B6B, #6B6BFF);
+  
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 50% 50%,50% 50%,50% 50% ;
+    background-size: 100% 100%, 100% 100%, 0% 0%,
+  }
+  50% {
+    background-position: 50% 50%,50% 50%,50% 50% ;
+    background-size: 100% 100%, 100% 100%, 100% 100%,
+    }
+  100% {
+    background-position: 50% 50%, 50% 50%, 50% 50%;
+    background-size: 0% 0%, 0% 100%, 100% 100%,
+  }
+}
+
+@keyframes path-Animation {
+  0%{ 
+   transform: translateX(0) ;
+  }
+  100%{ 
+    transform: translateX(200px) ;
+  }
+  
+}
+
+.login-form{
+  text-indent: 20px;
+}
+
+.emoji {
+  position: fixed;
+  font-size: 24px;
+  pointer-events: none;
+  animation: emojiAnimation linear infinite;
+}
+
+@keyframes emojiAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+.login.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.login.dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+  h2 {
+    margin-bottom: 30px;
+    font-size: 50px;
+    text-shadow: 0 0 3px #1b0772;
+  }
+ 
+  
+ p1{
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: underline;
+  position: relative;
+  left:1%;
+  top:-400%;
+}
+  label {
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: rgb(236, 213, 235);
+    box-shadow: 0 0 5px rgba(207, 216, 224, 0.5);
+  }
+
+  input:hover {
+    border-color: blue;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-shadow: 0 0 3px #22282e;
+  }
+  
+  button:hover {
+    background-color: #7a406c;
+  }
+  
+
+  
