@@ -25,7 +25,8 @@ function Signup() {
     }
 
     try {
-      const { user, session, error } = await supabase.auth.signUp({
+      const { data } = await supabase.auth.getUser();
+      const { user,  error } = await supabase.auth.signUp({
         email: userEmail,
         password: userPassword,
         options: { 
@@ -39,6 +40,7 @@ function Signup() {
           },
         },
       });
+      
       
 
       if (error) {
@@ -135,7 +137,7 @@ function Signup() {
         onChange={(e)=> setConfirmPassword(e.target.value ?? '')}
         required
       />
-      <button type="submit">Sign Up</button>
+      <button type="submit">{`Sign Up😊`}</button>
    
      </form>
     
