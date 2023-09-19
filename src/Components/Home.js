@@ -3,6 +3,10 @@ import './Home.css';
 import { Link, useHistory } from 'react-router-dom'; //Import useHistory
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import mentalHealthIcon from "./Images/mentalHealthIcon.png";
+import contactDoc from "./Images/contactDoc.png";
+import depressionIcon from "./Images/depressionicon.png";
+import helpIcon from "./Images/help.png";
+import checkAppointment from "./Images/viewApp.png";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,6 +15,9 @@ const Home = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  function handleClick() {
+    history.push("/depression")
+  }
 
   const handleMenuClick = (menuItem) => {
     // Handle menu item click (e.g., navigate to different pages)
@@ -36,17 +43,13 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div >
       <div className="topbar-container">
         <div className="topbar-left">
           <img className="appIcon" src={mentalHealthIcon} />
-          {/*<span className="app-name">Pure Minds Mental Health</span>*/}
-        </div>l
-        <span className="app-name">Pure Minds Mental Health</span>
-        {/* You can add more topbar content here if needed */}
+        </div>
+        <span >Pure Minds Mental Health</span>
       </div>
-
-      
       <div className="home-container">
         <span>
           <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
@@ -55,6 +58,53 @@ const Home = () => {
             <div className="menu-line"></div>
           </div>
         </span>
+        <div class="body-content">
+        <br></br>
+        <div class="layout-content">
+
+        <div class="wrapper">
+            <div class="grid-item">
+                <img class="welcome" src={mentalHealthIcon}/>
+                <div class="text">
+                </div>
+            </div>
+
+            <div class="grid-item">
+            <img class="addDocIcon" src={contactDoc} />
+                <div class="heading" >
+                    <p id="mouse-pinter">Contact a Doctor</p>
+                <p class="descriptions">This is where a user is able to contact a doctor.</p>
+                </div>
+            </div>
+
+            <div class="grid-item-not-ready">
+                <img class="addDocIcon" src={depressionIcon}/>
+                <div class="heading" onClick={handleClick}>
+                    <p id="mouse-pinter">Depression</p>
+                <p class="descriptions">This is where a user is contact doctors that specialise with depression</p>
+                </div>
+            </div>
+
+            <div class="grid-item-not-ready">
+                <img class="addDocIcon" src={helpIcon}/>
+                <div class="heading">
+                    <p id="mouse-pinter">Help</p>
+                <p class="descriptions">This is where a user can urgently seek help from available doctors</p>
+                </div>
+            </div>
+
+            <div class="grid-item-not-ready">
+                <img class="addDocIcon" src={checkAppointment}/>
+                <div class="heading">
+                    <p id="mouse-pinter">Appointments</p>
+                <p class="descriptions">This is where a user can view his/her appointments</p>
+                </div>
+            </div>
+        
+        </div>
+        </div>
+        </div>
+        
 
         {isMenuOpen && (
           <div className="menu-dropdown">

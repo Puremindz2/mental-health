@@ -8,9 +8,11 @@ import Profile from './Components/Profile';
 import Settings from './Components/Settings';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Depression from './Components/Resources/Depression';
 
 
 import './App.css';
+import ForgotPassword from './Components/forgotpassword';
 
 function App() {
   
@@ -24,6 +26,8 @@ function App() {
           <Route path="/signup" component={Signup} />
           <Route path="/profile" component={Profile}/>
           <Route path="/settings" component={Settings}/>
+          <Route path="/forgotpassword" component={ForgotPassword}/>
+          <Route path="/Depression" component={Depression}/>
         </Switch>
       </Router>
     </div>

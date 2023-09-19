@@ -28,7 +28,18 @@ function Signup() {
       const { user, session, error } = await supabase.auth.signUp({
         email: userEmail,
         password: userPassword,
+        options: { 
+          data: {
+            firstName: firstName,
+            lastName: lastName,
+            gender: gender,
+            age: age,
+            dob: dob,
+            userId: user.id,
+          },
+        },
       });
+      
 
       if (error) {
         console.error('Signup error:', error);
@@ -36,6 +47,7 @@ function Signup() {
       } else {
         console.log('User signed up:', user);
         toast.success('Account created successfully!');
+        const userId = user.id;
         // Redirect to the login page after successful account creation
         history.push('/login');
       }
@@ -86,12 +98,6 @@ function Signup() {
       onChange={(e)=> setGender(e.target.value ?? '')}
       required
       />
-
-    </form>
-
-    <div className="signup-container2">
-     <ToastContainer />
-     <form onSubmit={handleSubmit}>
     
        <label htmlFor="dob">Date of Birth:</label>
       <input
@@ -136,7 +142,7 @@ function Signup() {
     <p>Do you  have an account? <Link to="/login"> Log in</Link></p>
     </div>
    </div>
- </div>
+ 
  
   );
 }
