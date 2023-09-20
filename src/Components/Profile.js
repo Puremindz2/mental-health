@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../supabaseClient';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Account({ session }) {
   const [loading, setLoading] = useState(true);
@@ -10,9 +11,10 @@ export default function Account({ session }) {
   const [age,setAge] = useState(null);
   const [gender,setGender] = useState(null);
   const [dob,setDob] = useState(null);
-  
+  const history = useHistory();
 
   useEffect(() => {
+    
     async function getProfile() {
       setLoading(true);
       if (!session || !session.user) {
@@ -45,7 +47,10 @@ export default function Account({ session }) {
 
     getProfile();
   }, [session]);
-
+  const signOut = async () => {
+    await supabase.auth.signOut();
+    history.push('/');
+  }
   async function updateProfile(event) {
     event.preventDefault();
 
@@ -146,7 +151,7 @@ export default function Account({ session }) {
       </div>
 
       <div>
-        <button className="button block" type="button" onClick={() => supabase.auth.signOut()}>
+        <button className="button block" type="button" onClick={(e) => signOut()}>
           Sign Out
         </button>
       </div>

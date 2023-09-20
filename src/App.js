@@ -27,7 +27,7 @@ function App() {
           <Route path="/profile" component={Profile}/>
           <Route path="/settings" component={Settings}/>
           <Route path="/forgotpassword" component={ForgotPassword}/>
-          <Route path="/Depression" component={Depression}/>
+          <Route path="/Resources/Depression" component={Depression}/>
         </Switch>
       </Router>
     </div>

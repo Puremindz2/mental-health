@@ -26,7 +26,7 @@ function Signup() {
 
     try {
       const { data } = await supabase.auth.getUser();
-      const { user,  error } = await supabase.auth.signUp({
+      const { user, session} = await supabase.auth.signUp({
         email: userEmail,
         password: userPassword,
         options: { 
@@ -36,20 +36,28 @@ function Signup() {
             gender: gender,
             age: age,
             dob: dob,
-            userId: user.id,
+            //uuid: user.id,
           },
         },
       });
       
-      
 
-      if (error) {
-        console.error('Signup error:', error);
+      const { error } = await supabase.from("users").insert({
+        firstName: firstName,
+            lastName: lastName,
+            gender: gender,
+            age: age,
+            dob: dob,
+           // uuid: data.user.id,
+      });
+
+      if (!error) {
+        console.log('Signup error:', error);
         toast.error('Account creation failed. Please try again.');
       } else {
         console.log('User signed up:', user);
         toast.success('Account created successfully!');
-        const userId = user.id;
+        //const uuid = user.id;
         // Redirect to the login page after successful account creation
         history.push('/login');
       }
