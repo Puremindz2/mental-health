@@ -1,0 +1,82 @@
+.dropDown {
+    position: relative;
+    display: inline-block;
+    position: relative; float: right; margin-right: 50px;margin-left: 50px;width: 300px
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .logOut:hover{
+    background-color: #BF004A;
+    cursor: pointer;
+  }
+  .topbar-container{
+    position: absolute; height: 70px;left: 0px;top: 0px;background: #FFFFFF;width: 100%; /**border-bottom-color: #BF004A; border-bottom: 5px;**/
+  }
+  
+  .topbar-left{
+    background: #BF004A;position: absolute;left: 0%;right: 0%;top: 0%;bottom: 0%; width: 25%; overflow: auto;
+  }
+
+  .topbar-right{
+    position: absolute;right: 0%;right: 0%;top: 0%;bottom: 0%; width: 25%; overflow: none;
+  }
+  
+  .appIcon{
+    width: 50px; height: 50px; margin-top: -15px;
+  }
+  
+  .app-name{
+    position: absolute;height: 20px;left: 37.14%;right: 26.07%;top: calc(50% - 20px/2);
+          font-family: 'Source Sans Pro';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 20px;
+            letter-spacing: -0.588px;
+            cursor: pointer;
+            color: #FFFFFF;
+  }
+  
+  .userIcon{
+    width: 50px; height: 50px; margin-top: 8px;
+  }
+  
+  .userName{
+  position: absolute;font-family: 'Source Sans Pro';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;display: inline-block;vertical-align: middle; width: 150px;top: 20px;margin-left: 10px;
+  }
+  
+  .dropDownImage{
+   width: 15px; height:15px; margin-left: 15px;
+  }
+
+  .body-content{
+    border-top: #BF004A; border-top: 5px;
+    background: #E5E5E5; margin-top:5%; top:auto;
+  }
+
+  ul li {
+    list-style-type: circle;
+    margin-right: 15px;
+
+  }
+
+  .text-context{
+    margin-left: 15px;
+    margin-right: 15px;
+  }
