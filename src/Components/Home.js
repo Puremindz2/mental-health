@@ -3,10 +3,12 @@ import './Home.css';
 import { Link, useHistory } from 'react-router-dom'; //Import useHistory
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import mentalHealthIcon from "./Images/mentalHealthIcon.png";
-import contactDoc from "./Images/contactDoc.png";
+import anxiety from "./Images/anxietyicon.png"
 import depressionIcon from "./Images/depressionicon.png";
-import helpIcon from "./Images/help.png";
-import checkAppointment from "./Images/viewApp.png";
+import helpIcon from "./Images/ocdicon.png";
+import checkAppointment from "./Images/pdicon.jpg";
+import appIcon from './Images/mentalHealthIcon.png' 
+import PTSD from "./Images/ptsdicon.PNG"
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,6 +20,23 @@ const Home = () => {
   function handleClick() {
     history.push("/depression")
   }
+
+  function handleClick2() {
+    window.location.href = '/anxiety';
+  }
+
+  function handleClick3() {
+    window.location.href = '/ocd';
+  }
+
+  function handleClick4() {
+    window.location.href = '/PersonalityDisorder';
+  }
+
+  function handleClick5() {
+    window.location.href = '/ptsd';
+  }
+
 
   const handleMenuClick = (menuItem) => {
     // Handle menu item click (e.g., navigate to different pages)
@@ -44,12 +63,18 @@ const Home = () => {
 
   return (
     <div >
-      <div className="topbar-container">
-        <div className="topbar-left">
-          <img className="appIcon" src={mentalHealthIcon} />
-        </div>
-        <span >Pure Minds Mental Health</span>
+      <div class="topbar-container">
+      <div class="topbar-left">
+      <img src={appIcon}/>
+        <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
+
       </div>
+
+      <div>
+        <h1>Pure Minds - Mental Health</h1>
+      </div>
+
+      <div class="topbar-right">
       <div className="home-container">
         <span>
           <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
@@ -58,8 +83,12 @@ const Home = () => {
             <div className="menu-line"></div>
           </div>
         </span>
+      </div>
+    </div>
+    </div>
+
         <div class="body-content">
-        <br></br>
+        
         <div class="layout-content">
 
         <div class="wrapper">
@@ -70,34 +99,42 @@ const Home = () => {
             </div>
 
             <div class="grid-item">
-            <img class="addDocIcon" src={contactDoc} />
-                <div class="heading" >
-                    <p id="mouse-pinter">Contact a Doctor</p>
-                <p class="descriptions">This is where a user is able to contact a doctor.</p>
+            <img class="addDocIcon" src={anxiety} />
+                <div class="heading" onClick={handleClick2}>
+                    <p id="mouse-pinter">Anxiety</p>
+                <p class="descriptions">Learn and inform yourself all about anxiety.</p>
                 </div>
             </div>
 
-            <div class="grid-item-not-ready">
+            <div class="grid-item">
                 <img class="addDocIcon" src={depressionIcon}/>
                 <div class="heading" onClick={handleClick}>
                     <p id="mouse-pinter">Depression</p>
-                <p class="descriptions">This is where a user is contact doctors that specialise with depression</p>
+                <p class="descriptions">Learn and inform yourself all about depression</p>
                 </div>
             </div>
 
-            <div class="grid-item-not-ready">
+            <div class="grid-item">
                 <img class="addDocIcon" src={helpIcon}/>
-                <div class="heading">
-                    <p id="mouse-pinter">Help</p>
-                <p class="descriptions">This is where a user can urgently seek help from available doctors</p>
+                <div class="heading"onClick={handleClick3}>
+                    <p id="mouse-pinter">OCD</p>
+                <p class="descriptions">Learn and inform yourself all about OCD</p>
                 </div>
             </div>
 
-            <div class="grid-item-not-ready">
+            <div class="grid-item">
                 <img class="addDocIcon" src={checkAppointment}/>
-                <div class="heading">
-                    <p id="mouse-pinter">Appointments</p>
-                <p class="descriptions">This is where a user can view his/her appointments</p>
+                <div class="heading" onClick={handleClick4}>
+                    <p id="mouse-pinter">Personality Disorder</p>
+                <p class="descriptions">Learn and inform yourself all about Personality Disorder</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <img class="addDocIcon" src={PTSD}/>
+                <div class="heading" onClick={handleClick5}>
+                    <p id="mouse-pinter">PTSD</p>
+                <p class="descriptions">Learn and inform yourself all about PTSD</p>
                 </div>
             </div>
         
@@ -117,7 +154,6 @@ const Home = () => {
           </div>
         )}
       </div>
-    </div>
   );
 };
 

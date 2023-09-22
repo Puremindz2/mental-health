@@ -9,6 +9,10 @@ import Settings from './Components/Settings';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Depression from './Components/Resources/Depression';
+import OCD from './Components/Resources/OCD';
+import PTSD from './Components/Resources/PTSD';
+import Anxiety from './Components/Resources/Anxiety';
+import PersonalityDisorder from './Components/Resources/PersonalityDisorder';
 
 
 import './App.css';
@@ -27,7 +31,11 @@ function App() {
           <Route path="/profile" component={Profile}/>
           <Route path="/settings" component={Settings}/>
           <Route path="/forgotpassword" component={ForgotPassword}/>
-          <Route path="/Resources/Depression" component={Depression}/>
+          <Route path="/depression" component={Depression}/>
+          <Route path="/OCD" component={OCD}/>
+          <Route path="/PTSD" component={PTSD}/>
+          <Route path="/Anxiety" component={Anxiety}/>
+          <Route path="/PersonalityDisorder" component={PersonalityDisorder}/>
         </Switch>
       </Router>
     </div>
