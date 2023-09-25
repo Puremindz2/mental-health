@@ -9,6 +9,7 @@ import helpIcon from "./Images/ocdicon.png";
 import checkAppointment from "./Images/pdicon.jpg";
 import appIcon from './Images/mentalHealthIcon.png' 
 import PTSD from "./Images/ptsdicon.PNG"
+import ASMR from "./Images/asmricon.png"
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,6 +36,10 @@ const Home = () => {
 
   function handleClick5() {
     window.location.href = '/ptsd';
+  }
+
+  function handleClick6() {
+    window.location.href = '/ASMR';
   }
 
 
@@ -135,6 +140,14 @@ const Home = () => {
                 <div class="heading" onClick={handleClick5}>
                     <p id="mouse-pinter">PTSD</p>
                 <p class="descriptions">Learn and inform yourself all about PTSD</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <img class="addDocIcon" src={ASMR}/>
+                <div class="heading" onClick={handleClick6}>
+                    <p id="mouse-pinter">ASMR SLEEP</p>
+                <p class="descriptions">Find sounds and triggers that aid with sleeping</p>
                 </div>
             </div>
         

@@ -13,6 +13,7 @@ import OCD from './Components/Resources/OCD';
 import PTSD from './Components/Resources/PTSD';
 import Anxiety from './Components/Resources/Anxiety';
 import PersonalityDisorder from './Components/Resources/PersonalityDisorder';
+import ASMR from './Components/Resources/ASMR';
 
 
 import './App.css';
@@ -36,6 +37,7 @@ function App() {
           <Route path="/PTSD" component={PTSD}/>
           <Route path="/Anxiety" component={Anxiety}/>
           <Route path="/PersonalityDisorder" component={PersonalityDisorder}/>
+          <Route path="/ASMR" component={ASMR}/>
         </Switch>
       </Router>
     </div>

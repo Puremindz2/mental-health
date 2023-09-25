@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./Signup.css";
 import { supabase } from "../supabaseClient";
 import { Link, useHistory } from 'react-router-dom';
+import appIcon from "./Images/mentalHealthIcon.png";
 
 function Signup() {
   const history = useHistory();
@@ -66,14 +67,47 @@ function Signup() {
       toast.error('Oops! Something went wrong. Please try again.');
     }
   };
-    
+  function handleClick() {
+    window.location.href = '/';
+  }
+
+  function handleClick2() {
+    window.location.href = '/login';
+  }
+
+  function handleClick3() {
+    window.location.href = '/signup';
+  }
   return ( 
     <div className="signup-container">
-     <ToastContainer />
-     <div className="signup">
-  <form onSubmit={handleSubmit}>
   
-  <label htmlFor="firstName">First Name:</label>
+     <div class="welcome-topbar-container">
+      <div class="topbar-left">
+      <img src={appIcon}/>
+        <span class="app-name">Pure Minds - Mental Health</span>
+
+      </div>
+
+      <div>
+        <h1>Pure Minds - Mental Health</h1>
+      </div>
+
+      <div class="topbar-right">
+        <button class="topbar-btns" onClick={handleClick}>About</button>
+        <button class="topbar-btns" onClick={handleClick2}>Login</button>
+        <button class="topbar-btns" onClick={handleClick3}>Sign Up</button>
+    </div>
+    </div>
+    <ToastContainer />
+  <form onSubmit={handleSubmit} className="signup-form">
+  <table>
+    <tr>
+      <td><img src={appIcon}/></td>
+      <td>MENTAL HEALTH - SIGN UP</td>
+    </tr>
+
+    <tr>
+  <td> <label htmlFor="firstName" id="firstNameLabel">First Name:</label><br></br>
     <input
       type="text"
       id="firstName"
@@ -81,8 +115,8 @@ function Signup() {
       value={firstName}
       onChange={(e)=> setFirstName(e.target.value ?? '')}
       required
-    />
-    <label htmlFor="lastName">Last Name:</label>
+    /></td>
+    <td><label htmlFor="lastName" id="lastNameLabel">Last Name:</label><br></br>
     <input
       type="text"
       id="lastName"
@@ -90,7 +124,12 @@ function Signup() {
       value={lastName}
       onChange={(e)=> setLastName(e.target.value ?? '')}
       required
-    /><label htmlFor="age">Age:</label>
+    /></td>
+    </tr>
+
+    <tr>
+    <td><label htmlFor="age">Age:</label><br></br>
+    
     <input
       type="number"
       id="age"
@@ -98,8 +137,9 @@ function Signup() {
       value={age}
       onChange={(e)=> setAge(e.target.value ?? '')} 
       required
-    />
-   <label htmlFor="gender">Gender:</label>
+    /></td>
+
+    <td> <label htmlFor="gender">Gender:</label><br></br>
    <input
       type="text"
       id="gender" 
@@ -107,9 +147,11 @@ function Signup() {
       value={gender}
       onChange={(e)=> setGender(e.target.value ?? '')}
       required
-      />
-    
-       <label htmlFor="dob">Date of Birth:</label>
+      /></td>  
+    </tr>
+
+    <tr>
+       <td><label htmlFor="dob">Date of Birth:</label><br></br>
       <input
         type="date"
         id="dob"
@@ -117,8 +159,8 @@ function Signup() {
         value={dob}
         onChange={(e)=> setDob(e.target.value ?? '')}
         required
-      />
-      <label htmlFor="useremail">Email:</label>
+      /></td>
+      <td><label htmlFor="useremail">Email:</label><br></br>
       <input
         type="useremail"
         id="useremail"
@@ -126,9 +168,12 @@ function Signup() {
         value={userEmail}
         onChange={(e)=> setUserEmail(e.target.value ?? '')}
         required
-      />
-      
-      <label htmlFor="password">Password:</label>
+      /></td>
+      </tr>
+
+      <tr>
+        <td>
+      <label htmlFor="password">Password:</label><br></br>
       <input
         type="password"
         id="password"
@@ -136,7 +181,9 @@ function Signup() {
         value={userPassword}
         onChange={(e)=> setUserPassword(e.target.value ?? '')}
         required
-      /><label htmlFor="confirmPassword">Confirm Password:</label>
+      /></td>
+      <td>
+      <label htmlFor="confirmPassword">Confirm Password:</label><br></br>
       <input
         type="password"
         id="confirmPassword"
@@ -144,13 +191,19 @@ function Signup() {
         value={confirmPassword}
         onChange={(e)=> setConfirmPassword(e.target.value ?? '')}
         required
-      />
-      <button type="submit">{`Sign Up`}</button>
-   
+      /></td></tr>
+      <br></br>
+      <tr>
+
+      
+      <td><button type="submit">{`Sign Up`}</button></td>
+      
+      <td><p>Do you  have an account? <Link to="/login"> Log in</Link></p></td>
+      </tr>
+      </table>
+      
      </form>
     
-    <p>Do you  have an account? <Link to="/login"> Log in</Link></p>
-    </div>
    </div>
  
  

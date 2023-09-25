@@ -5,6 +5,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Login.css';
 import uIcon from "./Images/uIcon.png";
+import appIcon from "./Images/mentalHealthIcon.png";
 
 const Login = () => {
   const history = useHistory();
@@ -26,6 +27,14 @@ const Login = () => {
       clearInterval(interval);
     };
   }, []);
+
+  function handleClick1() {
+    window.location.href = '/';
+  }
+
+  function handleClick2() {
+    window.location.href = '/signup';
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -59,8 +68,25 @@ const Login = () => {
 
   return (
     <div className="login">
+      <div class="welcome-topbar-container">
+      <div class="topbar-left">
+      <img src={appIcon}/>
+        <span class="app-name" onClick={handleClick1}>Pure Minds - Mental Health</span>
+
+      </div>
+
+      <div>
+        <h1>Pure Minds - Mental Health</h1>
+      </div>
+
+      <div class="topbar-right">
+        <button class="topbar-btns">About</button>
+        <button class="topbar-btns">Login</button>
+        <button class="topbar-btns" onClick={handleClick2}>Sign Up</button>
+    </div>
+    </div>
       <ToastContainer />
-      <form onSubmit={handleSubmit} className="login-form" style={formStyles}>
+      <form onSubmit={handleSubmit} className="login-form">
       <img class="userIcon" src={uIcon}/>
         <h2>Login</h2>
         

@@ -3,10 +3,12 @@
   padding: 0;
   font-family: Arial, sans-serif;
   font-size: 30px;
-  background-size: cover;
-  background-image: url('Images/Mk.jpg');
+  /*background-size: cover;
+  background-image: url('Images/asmrbg3.jpg');
   background-position: center center; 
-  min-height: 100vh;
+  min-height: 100vh;*/
+  background:  #336db8;
+  background-image: radial-gradient(circle, black, #0a1627);
   animation-duration: 8s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -193,6 +195,96 @@ a {
 @keyframes movre {
   50% {color: rgb(117, 245, 66);}
   50% {box-shadow: 10px 20px 30px rgb(248, 203, 4);}
+}
+
+.content-container{
+  /*background-size: cover;
+  background-image: url('Images/welcomebg.jpg');
+  background-position: center center; 
+  min-height: 100vh;
+  filter: blur(5px);
+
+  /*background-image: radial-gradient(black, #232323, #0a1627);
+  background:  #336db8;*/
+}
+
+.welcome-topbar-container{
+  position: absolute;font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 35px;
+      position: relative;
+      position: absolute; height: 70px;left: 0px;top: 0px;background: #FFFFFF;width: 100%;
+      border-style: none none solid none;
+      border-color:#BF004A;
+      background: #102036;
+      /*background:  #336db8;*/
+      color: white;
+      filter: blur(0);
+}
+
+.topbar-btns{
+ margin-left:5px;
+ margin-top: 10px;
+ color: #BE0028;
+ background-color: white;
+ text-shadow: none;
+
+}
+
+.MainHeading{
+  color:white;
+  margin-top: 15%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.MainHeading h1{
+  margin-top: -80px;
+  color:white;
+  font-size: 28px;
+}
+
+.MainHeading p{
+  font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    text-align: left;
+    font-size: 18px;
+}
+
+.welome-table{
+  color:white;
+  margin-top: 10%;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
+}
+
+.welome-table th, td{
+  border: 1px white;
+  border-style: none solid none none;
+  width: 33%;
+}
+
+.welome-table-headers{
+  /*margin-top: -80px;*/
+  color:white;
+  font-size: 24px;
+
+}
+
+.welome-table-text{
+  font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    /*text-align: left;*/
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.table-image img{
+  height: 250px;
+  width: 250px;
 }
 
 
