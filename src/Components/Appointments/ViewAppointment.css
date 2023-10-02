@@ -1,0 +1,130 @@
+.signup-container form {
+  opacity: 1;
+  padding: 5px;
+  /*animation: changeColor 3s infinite;*/
+  background: white;
+}
+
+.signup-container{
+  position: relative;
+  padding: 5px 0px 70px 0px;
+  /*animation: changeColor 3s infinite;*/
+  background-image: radial-gradient(circle, black, #0a1627);
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    opacity: 0.8;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(223, 170, 170, 0.1);
+    padding: 20px;
+    width: 300px;
+    background: white;
+    width: 800px;
+  height: 600px;
+  margin-top: 100px;
+  margin-left: 25%;
+    
+  }
+  
+  .signup-form label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+    
+  }
+  
+  .signup-form input {
+    
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 40%;
+  }
+
+ 
+  
+  .signup-form button[type="submit"] {
+    background-color: #56c0ce;
+    border: none;
+    border-radius: 5px;
+    font-size: 25px;
+    color: 
+    #fcfafaea;
+   
+  }  
+
+  .welcome-topbar-container{
+    position: absolute;font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 35px;
+        position: relative;
+        position: absolute; height: 70px;left: 0px;top: 0px;background: #FFFFFF;width: 100%;
+        border-style: none none solid none;
+        border-color:#BF004A;
+        background: #102036;
+        /*background:  #336db8;*/
+        color: white;
+        filter: blur(0);
+  }
+
+  .signup-form tr, td{
+    margin-left: 10px;
+
+  }
+
+  .signup-form img{
+    height: 80px;
+    width: 80px;
+  }
+
+.middle{
+  margin-right: 100%;
+}
+
+.viewApp .tblHeadingsID{
+  font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 1%;
+}
+
+.viewApp .tblHeadings{
+  font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 20%;
+}
+
+
+/*
+.vaform .viewApp tr, td{
+  border: 1px solid;
+}
+*/
+.vaform{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    opacity: 0.8;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(223, 170, 170, 0.1);
+    padding: 20px;
+    width: 300px;
+    background: white;
+    width: 800px;
+  height: 600px;
+  margin-top: 100px;
+  margin-left: 25%;
+}

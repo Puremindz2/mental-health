@@ -14,6 +14,10 @@ import PTSD from './Components/Resources/PTSD';
 import Anxiety from './Components/Resources/Anxiety';
 import PersonalityDisorder from './Components/Resources/PersonalityDisorder';
 import ASMR from './Components/Resources/ASMR';
+import Appointment from './Components/Appointments/Appointment';
+import BookAppointment from './Components/Appointments/BookAppointment';
+import ViewAppointment from './Components/Appointments/ViewAppointment';
+
 
 
 import './App.css';
@@ -38,6 +42,9 @@ function App() {
           <Route path="/Anxiety" component={Anxiety}/>
           <Route path="/PersonalityDisorder" component={PersonalityDisorder}/>
           <Route path="/ASMR" component={ASMR}/>
+          <Route path="/Appointment" component={Appointment}/>
+          <Route path="/BookAppointment" component={BookAppointment}/>
+          <Route path="/ViewAppointment" component={ViewAppointment}/>
         </Switch>
       </Router>
     </div>
