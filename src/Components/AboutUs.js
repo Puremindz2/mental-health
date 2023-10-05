@@ -94,7 +94,7 @@ const Login = () => {
       <div class="row">
   <div class="column">
     <div class="card">
-    <img src={milcah} style={{width:'100%', height:'600px'}}/>
+    <img src={milcah} style={{width:'50%', height:'300px'}}/>
       <div class="container">
         <h2>KM Mbuyi</h2>
         <p class="title">Business Analyst and Front End Dev</p>
@@ -107,7 +107,7 @@ const Login = () => {
 
   <div class="column">
     <div class="card">
-      <img src={moshe} style={{width:'100%', height:'600px'}}/>
+      <img src={moshe} style={{width:'50%', height:'300px'}}/>
       <div class="container">
         <h2>Moshe M Mahlaela</h2>
         <p class="title">Full Stack Developer</p>
@@ -120,7 +120,7 @@ const Login = () => {
 
   <div class="column">
     <div class="card">
-    <img src={tshepo} style={{width:'100%', height:'600px'}}/>
+    <img src={tshepo} style={{width:'50%', height:'300px'}}/>
       <div class="container">
         <h2>Tshepo Molapisi</h2>
         <p class="title">Full Stack Developer</p>
@@ -133,7 +133,7 @@ const Login = () => {
 
   <div class="column">
     <div class="card">
-    <img src={milcah} style={{width:'100%', height:'600px'}}/>
+    <img src={milcah} style={{width:'50%', height:'300px'}}/>
       <div class="container">
         <h2>Vanessa</h2>
         <p class="title">Project Manager</p>
