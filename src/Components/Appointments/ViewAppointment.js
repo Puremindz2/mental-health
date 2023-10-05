@@ -72,7 +72,7 @@ function Signup() {
     }
   };
   function handleClick() {
-    window.location.href = '/';
+    window.location.href = '/home';
   }
 
   function handleClick2() {
@@ -105,18 +105,24 @@ function Signup() {
         break;
     }
   };
+  //TABLE STYLINGS
+  const tbBorder = '1px solid';
+  const idWidth = '5%'
+  const otherWidth = '20%'
+  const otherWidth2 = '10%'
+  const otherWidth3 = '25%'
   return ( 
     <div className="signup-container">
   
   <div class="topbar-container">
       <div class="topbar-left">
       <img src={appIcon}/>
-        <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
+        <span class="app-name" onClick={handleClick}>Pure Minds</span>
 
       </div>
 
       <div>
-        <h1>Pure Minds - Mental Health</h1>
+        <h1>Mental Health</h1>
       </div>
 
       <div class="topbar-right">
@@ -143,25 +149,32 @@ function Signup() {
     )}
     </div>
     <ToastContainer />
-  <form onSubmit={handleSubmit} class="vaform">
-  <table class="viewApp">
+  <form onSubmit={handleSubmit} className="vaform">
+  <table className="viewApp" style={{border : tbBorder}}>
     <tr>
-      <td class="tblHeadingsID">ID</td>
-      <td class="tblHeadings">NAME</td>
-      <td class="tblHeadings">APPOINTMENT DATE</td>
-      <td class="tblHeadings">APPROVAL STATUS</td>
-      <td class="tblHeadings">DOCTOR</td>
-      <td class="tblHeadings">COMMENTS</td>
+      <td className="tblHeadingsID" style={{border : tbBorder, width: idWidth}}>ID</td>
+      <td className="tblHeadings" style={{border : tbBorder, width: otherWidth}}>NAME</td>
+      <td className="tblHeadings" style={{border : tbBorder, width: otherWidth}}>APPOINTMENT DATE</td>
+      <td className="tblHeadings" style={{border : tbBorder, width: otherWidth2}}>APPROVAL STATUS</td>
+      <td className="tblHeadings" style={{border : tbBorder, width: otherWidth}}>DOCTOR</td>
+      <td className="tblHeadings" style={{border : tbBorder, width: otherWidth3}}>COMMENTS</td>
     </tr>
     <tr>
-      <td>1</td>
-      <td>Test Example</td>
-      <td>09/09/2023 09:30</td>
-      <td>Approved</td>
-      <td>DR Sam</td>
-      <td>Your appointment is approved</td>
+      <td style={{border : tbBorder,width: idWidth}}>1</td>
+      <td style={{border : tbBorder, width: otherWidth}}>Test Example</td>
+      <td style={{border : tbBorder,width: otherWidth}}>09/09/2023 09:30</td>
+      <td style={{border : tbBorder, width: otherWidth2}}>Approved</td>
+      <td style={{border : tbBorder, width: otherWidth}}>DR Sam</td>
+      <td style={{border : tbBorder, width: otherWidth3}}>Your appointment is approved</td>
     </tr>
-   
+    <tr>
+      <td style={{border : tbBorder,width: idWidth}}>36</td>
+      <td style={{border : tbBorder, width: otherWidth}}>Test Example 2</td>
+      <td style={{border : tbBorder,width: otherWidth}}>09/19/2023 09:30</td>
+      <td style={{border : tbBorder, width: otherWidth2}}>Declined</td>
+      <td style={{border : tbBorder, width: otherWidth}}>DR Sam</td>
+      <td style={{border : tbBorder, width: otherWidth3}}>A family emergency has come up.</td>
+    </tr>
       </table>
       
      </form>

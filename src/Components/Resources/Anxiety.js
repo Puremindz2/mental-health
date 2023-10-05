@@ -44,8 +44,8 @@ const Topbar=() => {
   };
   return (
     <div class="depression">
-    <div class="topbar-container">
-      <div class="topbar-left">
+    <div class="topbar-container"style={{borderColor:'blue'}}>
+      <div class="topbar-left" style={{backgroundColor:'blue'}}>
       <img src={appIcon}/>
         <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
 
@@ -120,7 +120,7 @@ Everyone feels anxiety now and then -- and there can be good reasons why. But in
 
             <div class="wid3">
             <br></br><br></br><br></br>
-            <h1>Anxiety Treatment And Home Remedies</h1>
+            <h1>Anxiety Treatment</h1>
                 <p>
                 If no other medical condition is found, you may be referred to a psychiatrist or psychologist. These are mental health professionals who are trained to diagnose and treat conditions including GAD. Treatment for GAD most often includes a combination of medication and cognitive behavioral therapy. And your daily habits can make a difference.
                     <br></br><br></br>

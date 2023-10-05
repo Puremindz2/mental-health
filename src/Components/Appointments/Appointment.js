@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './Appointment.css';
 import appIcon from "../Images/mentalHealthIcon.png";
-import asmr from "../Images/asmrbg.jpg";
+import bookA from "../Images/bookA.jpg";
+import viewA from "../Images/viewA.jpg";
 
 const WelcomePage = () => {
   const history = useHistory();
@@ -29,15 +30,20 @@ const WelcomePage = () => {
   }, []);
 
   function handleClick() {
-    window.location.href = '/';
-  }
-
-  function handleClick2() {
-    window.location.href = '/login';
+    window.location.href = '/home';
   }
 
   function handleClick3() {
-    window.location.href = '/signup';
+    window.location.href = '/login';
+  }
+
+  function handleClick4() {
+    window.location.href = '/BookAppointment';
+  }
+
+
+  function handleClick3() {
+    window.location.href = '/ViewAppointment';
   }
   const handleMenuClick = (menuItem) => {
     // Handle menu item click (e.g., navigate to different pages)
@@ -67,12 +73,12 @@ const WelcomePage = () => {
 <div class="topbar-container">
       <div class="topbar-left">
       <img src={appIcon}/>
-        <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
+        <span class="app-name" onClick={handleClick}>Pure Minds</span>
 
       </div>
 
       <div>
-        <h1>Pure Minds - Mental Health</h1>
+        <h1>Mental Health</h1>
       </div>
 
       <div class="topbar-right">
@@ -105,8 +111,8 @@ const WelcomePage = () => {
           <th>BOOK APPOINTMENTS</th>
         </tr>
         <tr class="welome-table-text">
-          <td class="table-image"><img src={appIcon}/> </td>
-          <td class="table-image"><img src={appIcon}/></td>
+          <td class="table-image"><img src={bookA} onClick={handleClick3}/> </td>
+          <td class="table-image"><img src={viewA} onClick={handleClick4}/></td>
         </tr>
         <tr class="welome-table-text">
           <td>View Appointments that you have booked.</td>

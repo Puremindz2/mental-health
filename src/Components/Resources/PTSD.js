@@ -44,8 +44,8 @@ const Topbar=() => {
   };
   return (
     <div class="depression">
-    <div class="topbar-container">
-      <div class="topbar-left">
+    <div class="topbar-container" style={{borderColor:'orange'}}>
+      <div class="topbar-left" style={{backgroundColor:'orange'}}>
       <img src={appIcon}/>
         <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
 

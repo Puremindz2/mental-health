@@ -3,6 +3,7 @@
   padding: 5px;
   /*animation: changeColor 3s infinite;*/
   background: white;
+
 }
 
 .signup-container{
@@ -10,6 +11,7 @@
   padding: 5px 0px 70px 0px;
   /*animation: changeColor 3s infinite;*/
   background-image: radial-gradient(circle, black, #0a1627);
+  min-height: 100vh;
 }
 
 .signup-form {
@@ -21,7 +23,6 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(223, 170, 170, 0.1);
     padding: 20px;
-    width: 300px;
     background: white;
     width: 800px;
   height: 600px;
@@ -82,6 +83,11 @@
   }
 
   .signup-form img{
-    height: 80px;
-    width: 80px;
+    margin-left: 350px;
+    height: 100px;
+    width: 100px;
+  }
+
+  .signup-form button{
+    margin-left: 350px;
   }

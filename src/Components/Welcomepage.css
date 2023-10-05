@@ -264,14 +264,13 @@ a {
 .welome-table th, td{
   border: 1px white;
   border-style: none solid none none;
-  width: 33%;
+  /*width: 33%;*/
 }
 
 .welome-table-headers{
   /*margin-top: -80px;*/
   color:white;
   font-size: 24px;
-
 }
 
 .welome-table-text{
@@ -282,9 +281,41 @@ a {
     margin-left: 20px;
 }
 
-.table-image img{
+.column1 img, .column2 img, .column3 img{
   height: 250px;
   width: 250px;
+}
+
+/*{
+  animation: cssAnimation 0s 5s forwards;
+  visibility: hidden;
+}*/
+
+@keyframes cssAnimation {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+  /*from {visibility: hidden;}
+  to   { visibility: visible; }*/
+}
+
+
+.column1{
+  animation: cssAnimation 5s linear infinite;
+  opacity: 1;
+  margin-top: -100px;
+  visibility: visible;
+}
+
+.column2{
+  animation: cssAnimation 6s linear infinite;
+  opacity: 1;
+  visibility: visible;
+}
+
+.column3{
+  animation: cssAnimation 7s linear infinite;
+  opacity: 1;
+  visibility: visible;
 }
 
 

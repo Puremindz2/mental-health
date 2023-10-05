@@ -43,8 +43,8 @@
   border-radius: 10px;
   position: absolute;
   width: 400px;
-  height: 600px;
-  margin-top: 50px;
+  height: 500px;
+  margin-top: -50px;
 }
 
 .emoji {
@@ -76,8 +76,8 @@
 }
 
 .login-form h2 {
-    margin-bottom: 30px;
-    font-size: 50px;
+    margin-bottom: 25px;
+    font-size: 40px;
     text-shadow: 0 0 3px #1b0772;
   }
  
@@ -128,8 +128,8 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-shadow: 0 0 3px #22282e;
-    width: 80%;
-    margin-left: 15px;
+    width: 86%;
+    margin-right: -100px;
   }
   
    button:hover {

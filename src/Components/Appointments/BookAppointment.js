@@ -72,7 +72,7 @@ function Signup() {
     }
   };
   function handleClick() {
-    window.location.href = '/';
+    window.location.href = '/home';
   }
 
   function handleClick2() {
@@ -111,12 +111,12 @@ function Signup() {
   <div class="topbar-container">
       <div class="topbar-left">
       <img src={appIcon}/>
-        <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
+        <span class="app-name" onClick={handleClick}>Pure Minds</span>
 
       </div>
 
       <div>
-        <h1>Pure Minds - Mental Health</h1>
+        <h1>Mental Health</h1>
       </div>
 
       <div class="topbar-right">

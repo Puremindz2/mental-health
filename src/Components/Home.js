@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Home.css';
 import { Link, useHistory } from 'react-router-dom'; //Import useHistory
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import mentalHealthIcon from "./Images/mentalHealthIcon.png";
-import anxiety from "./Images/anxietyicon.png"
-import depressionIcon from "./Images/depressionicon.png";
-import helpIcon from "./Images/ocdicon.png";
-import checkAppointment from "./Images/pdicon.jpg";
+import anxiety from "./Images/blue.jpg"
+import depressionIcon from "./Images/green.jpg";
+import helpIcon from "./Images/pink.jpg";
+import checkAppointment from "./Images/purple.jpg";
 import appIcon from './Images/mentalHealthIcon.png' 
-import PTSD from "./Images/ptsdicon.PNG"
+import PTSD from "./Images/red.jpg"
 import ASMR from "./Images/asmricon.png"
+import vDoc from "./Images/doctor.jpg"
+import bookA from "./Images/bookA.jpg"
 
 const Home = () => {
+  const myRef = useRef()
+  const myRef2 = useRef()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const history = useHistory();
+  var display = false;
+  
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -40,6 +47,29 @@ const Home = () => {
 
   function handleClick6() {
     window.location.href = '/ASMR';
+  }
+
+  function handleClick7() {
+    window.location.href = '/Appointment';
+  }
+
+  
+
+  const displayDoc = () => {
+    display = !display;
+    if(display)
+    { 
+      myRef.current.style.filter = "blur(5px)" ; 
+      myRef2.current.style.display = "block" ; 
+      myRef2.current.style.visibility = "visible" ; 
+      myRef2.current.style.filter = "blur(0)" ; 
+    }
+    else
+    {
+      myRef.current.style.filter = "blur(0px)" ;
+      myRef2.current.style.visibility = "hidden" ; 
+    }
+    
   }
 
 
@@ -92,14 +122,82 @@ const Home = () => {
     </div>
     </div>
 
-        <div class="body-content">
+    <div ref={myRef2} class="docPopUp" style={{display:'none', position:'absolute',zIndex:1,height:'200px'}}>
+        <form className="signup-form">,
+  <table>
+    <tr>
+      <td class="middle" ><img src={appIcon} style={{marginLeft:'0px'}} /></td>
+      <td class="middle" ><img src={appIcon} style={{marginLeft:'0px'}}/></td>
+    </tr>
+
+    <tr>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Name: CM Van Jaarsveldt</label><br></br></td>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Name: Milcah's Dad</label><br></br></td>
+    </tr>
+
+    <tr>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Job: Occupational Therapist</label><br></br></td>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Job: unknown</label><br></br></td>
+    </tr>
+
+    <tr>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Qualification: B.Occ (Pret) OT 0015105</label><br></br></td>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Qualification: unknown</label><br></br></td>
+    </tr>
+
+    <tr>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Workplace: Sebokeng Psychiatric Unit</label><br></br></td>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Workplace: unknown</label><br></br></td>
+    </tr>
+
+    <tr>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Office Hours: 07:30 to 16:00</label><br></br></td>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Office Hours: unknown</label><br></br></td>
+    </tr>
+
+    <tr>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Contact: vanjaarsveldtc@gmail.com</label><br></br></td>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Contact: unknown</label><br></br></td>
+    </tr>
+
+      <br></br>
+      <tr>
+
+      
+      <td class="middle"><button onClick={displayDoc}>Ok</button></td>
+      
+      </tr>
+      </table>
+      
+     </form>
+        </div>
+
+        <div ref={myRef} class="body-content">
         
         <div class="layout-content">
-
+        
         <div class="wrapper">
+        <div class="grid-item">
+            <img class="addDocIcon" src={vDoc} />
+                <div class="heading" onClick={displayDoc}>
+                    <p id="mouse-pinter">View Doctors</p>
+                <p class="descriptions">View Doctors Details.</p>
+                </div>
+            </div>
+
             <div class="grid-item">
-                <img class="welcome" src={mentalHealthIcon}/>
-                <div class="text">
+            <img class="addDocIcon" src={bookA} />
+                <div class="heading" onClick={handleClick7}>
+                    <p id="mouse-pinter">Appointments</p>
+                <p class="descriptions">View and Book Appointments.</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <img class="addDocIcon" src={ASMR}/>
+                <div class="heading" onClick={handleClick6}>
+                    <p id="mouse-pinter">ASMR SLEEP</p>
+                <p class="descriptions">Find sounds and triggers that aid with sleeping</p>
                 </div>
             </div>
 
@@ -143,17 +241,12 @@ const Home = () => {
                 </div>
             </div>
 
-            <div class="grid-item">
-                <img class="addDocIcon" src={ASMR}/>
-                <div class="heading" onClick={handleClick6}>
-                    <p id="mouse-pinter">ASMR SLEEP</p>
-                <p class="descriptions">Find sounds and triggers that aid with sleeping</p>
-                </div>
-            </div>
+            
         
         </div>
         </div>
-        </div>
+        </div> 
+
         
 
         {isMenuOpen && (

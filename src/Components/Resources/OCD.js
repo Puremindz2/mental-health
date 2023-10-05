@@ -44,8 +44,8 @@ const Topbar=() => {
   };
   return (
     <div class="depression">
-    <div class="topbar-container">
-      <div class="topbar-left">
+    <div class="topbar-container" style={{borderColor:'pink'}}>
+      <div class="topbar-left" style={{backgroundColor:'pink'}}>
       <img src={appIcon}/>
         <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
 
@@ -88,7 +88,7 @@ OCD isn’t about habits like biting your nails or thinking negative thoughts. A
             <div class="wid2">
             <br></br><br></br>
             <h1>OCD Diagnosis</h1>
-            <img src={dep3}/>
+            <img src={dep3} style={{height:'500px'}}/>
             <span>
                 <p>
                 Your doctor may do a physical exam and blood tests to make sure something else isn’t causing your symptoms. They will also talk with you about your feelings, thoughts, and habits.
@@ -106,7 +106,7 @@ OCD isn’t about habits like biting your nails or thinking negative thoughts. A
             <br></br><br></br> 
             </div>
             <div class="wid3">
-            <br></br><br></br><br></br>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
             <h1>Is Depression Curable?</h1>
                 <p>
                 There’s no cure for depression. Your symptoms may go away over time, but the condition won’t. But with care and treatment, you can reach remission and enjoy a long, healthy life.

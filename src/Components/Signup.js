@@ -84,12 +84,12 @@ function Signup() {
      <div class="welcome-topbar-container">
       <div class="topbar-left">
       <img src={appIcon}/>
-        <span class="app-name">Pure Minds - Mental Health</span>
+        <span class="app-name">Pure Minds</span>
 
       </div>
 
       <div>
-        <h1>Pure Minds - Mental Health</h1>
+        <h1>Mental Health</h1>
       </div>
 
       <div class="topbar-right">
@@ -99,11 +99,10 @@ function Signup() {
     </div>
     </div>
     <ToastContainer />
-  <form onSubmit={handleSubmit} className="signup-form">
+  <form onSubmit={handleSubmit} class="signup-form" style={{height:'500px'}}>
   <table>
     <tr>
-      <td><img src={appIcon}/></td>
-      <td>MENTAL HEALTH - SIGN UP</td>
+      <img src={appIcon}/>
     </tr>
 
     <tr>
@@ -140,14 +139,11 @@ function Signup() {
     /></td>
 
     <td> <label htmlFor="gender">Gender:</label><br></br>
-   <input
-      type="text"
-      id="gender" 
-      name="gender"
-      value={gender}
-      onChange={(e)=> setGender(e.target.value ?? '')}
-      required
-      /></td>  
+    <select name="gender" id="gender">
+      <option value="Please choose One">Please choose One:</option>
+        <option value="MALE">MALE</option>
+        <option value="FEMALE">FEMALE</option>
+      </select></td>  
     </tr>
 
     <tr>
@@ -198,7 +194,6 @@ function Signup() {
       
       <td><button type="submit">{`Sign Up`}</button></td>
       
-      <td><p>Do you  have an account? <Link to="/login"> Log in</Link></p></td>
       </tr>
       </table>
       

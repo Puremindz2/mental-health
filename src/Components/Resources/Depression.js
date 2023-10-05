@@ -44,15 +44,15 @@ const Topbar=() => {
   };
   return (
     <div class="depression">
-    <div class="topbar-container">
-      <div class="topbar-left">
+    <div class="topbar-container" style={{borderColor:'green'}}>
+      <div class="topbar-left" style={{backgroundColor:'green'}}>
       <img src={appIcon}/>
         <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
 
       </div>
 
       <div>
-        <h1>DEPRESSION</h1>
+        <h1 style={{color:'green'}}>DEPRESSION</h1>
       </div>
 
       <div class="topbar-right">

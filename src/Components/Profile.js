@@ -21,7 +21,7 @@ export default function Account({ session }) {
     window.location.href = '/signup';
   }
   function handleClick() {
-    window.location.href = '/';
+    window.location.href = '/home';
   }
 
   const handleMenuClick = (menuItem) => {

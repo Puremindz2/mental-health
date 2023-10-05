@@ -71,12 +71,12 @@ const Login = () => {
       <div class="welcome-topbar-container">
       <div class="topbar-left">
       <img src={appIcon}/>
-        <span class="app-name" onClick={handleClick1}>Pure Minds - Mental Health</span>
+        <span class="app-name" onClick={handleClick1}>Pure Minds</span>
 
       </div>
 
       <div>
-        <h1>Pure Minds - Mental Health</h1>
+        <h1>Mental Health</h1>
       </div>
 
       <div class="topbar-right">

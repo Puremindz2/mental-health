@@ -1,5 +1,9 @@
 .asmr-body-content{
-    background-image: url(../Images/asmrbg2.jpg);
+  margin-top: -6%;
+  background-size: cover;
+  background-position: center center; 
+  min-height: 110vh;
+    background-image: url(../Images/asmrbg.jpg);
 }
 
 .dropDown {
@@ -40,7 +44,7 @@
   }
 
   .topbar-left img{
-    width: 50px; height: 50px; margin-top: 10px; margin-left: -300px;
+    width: 50px; height: 50px; margin-top: 10px; margin-left: -200px;
   }
 
   .topbar-right{
