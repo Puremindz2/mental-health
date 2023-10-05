@@ -68,7 +68,7 @@ function Signup() {
     }
   };
   function handleClick() {
-    window.location.href = '/';
+    window.location.href = '/AboutUs';
   }
 
   function handleClick2() {
@@ -78,13 +78,16 @@ function Signup() {
   function handleClick3() {
     window.location.href = '/signup';
   }
+  function goToWelcome() {
+    window.location.href = '/';
+  }
   return ( 
     <div className="signup-container">
   
      <div class="welcome-topbar-container">
       <div class="topbar-left">
       <img src={appIcon}/>
-        <span class="app-name">Pure Minds</span>
+        <span class="app-name" onClick={goToWelcome}>Pure Minds</span>
 
       </div>
 
@@ -93,7 +96,7 @@ function Signup() {
       </div>
 
       <div class="topbar-right">
-        <button class="topbar-btns" onClick={handleClick}>About</button>
+        <button class="topbar-btns" onClick={handleClick}>About Us</button>
         <button class="topbar-btns" onClick={handleClick2}>Login</button>
         <button class="topbar-btns" onClick={handleClick3}>Sign Up</button>
     </div>

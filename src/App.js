@@ -17,6 +17,7 @@ import ASMR from './Components/Resources/ASMR';
 import Appointment from './Components/Appointments/Appointment';
 import BookAppointment from './Components/Appointments/BookAppointment';
 import ViewAppointment from './Components/Appointments/ViewAppointment';
+import AboutUs from './Components/AboutUs'
 
 
 
@@ -45,6 +46,7 @@ function App() {
           <Route path="/Appointment" component={Appointment}/>
           <Route path="/BookAppointment" component={BookAppointment}/>
           <Route path="/ViewAppointment" component={ViewAppointment}/>
+          <Route path="/AboutUs" component={AboutUs}/>
         </Switch>
       </Router>
     </div>

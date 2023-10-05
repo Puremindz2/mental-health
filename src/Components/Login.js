@@ -29,11 +29,14 @@ const Login = () => {
   }, []);
 
   function handleClick1() {
-    window.location.href = '/';
+    window.location.href = '/AboutUs';
   }
 
   function handleClick2() {
     window.location.href = '/signup';
+  }
+  function goToWelcome() {
+    window.location.href = '/';
   }
 
   const handleSubmit = async (event) => {
@@ -71,7 +74,7 @@ const Login = () => {
       <div class="welcome-topbar-container">
       <div class="topbar-left">
       <img src={appIcon}/>
-        <span class="app-name" onClick={handleClick1}>Pure Minds</span>
+        <span class="app-name" onClick={goToWelcome}>Pure Minds</span>
 
       </div>
 

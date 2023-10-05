@@ -25,7 +25,7 @@ const WelcomePage = () => {
   }, []);
 
   function handleClick() {
-    window.location.href = '/';
+    window.location.href = '/AboutUs';
   }
 
   function handleClick2() {
@@ -51,7 +51,7 @@ const WelcomePage = () => {
       </div>
 
       <div class="topbar-right">
-        <button class="topbar-btns" onClick={handleClick}>About</button>
+        <button class="topbar-btns" onClick={handleClick}>About Us</button>
         <button class="topbar-btns" onClick={handleClick2}>Login</button>
         <button class="topbar-btns" onClick={handleClick3}>Sign Up</button>
     </div>
