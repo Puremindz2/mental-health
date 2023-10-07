@@ -26,8 +26,8 @@ function Signup() {
     }
 
     try {
-      const { data } = await supabase.auth.getUser();
-      const { user, session} = await supabase.auth.signUp({
+      // const { data } = await supabase.auth.getUser();
+      const  user= await supabase.auth.signUp({
         email: userEmail,
         password: userPassword,
         options: { 
@@ -41,16 +41,21 @@ function Signup() {
           },
         },
       });
+
+      console.log(user);
       
+      console.log(firstName, lastName, gender, age, dob)
 
       const { error } = await supabase.from("users").insert({
         firstName: firstName,
             lastName: lastName,
-            gender: gender,
-            age: age,
+            gender: "gender",
+            age: parseInt(age),
             dob: dob,
-           // uuid: data.user.id,
+            uuid: "data.user.id",
       });
+
+      console.log(error)
 
       if (!error) {
         console.log('Signup error:', error);
@@ -142,8 +147,8 @@ function Signup() {
     /></td>
 
     <td> <label htmlFor="gender">Gender:</label><br></br>
-    <select name="gender" id="gender">
-      <option value="Please choose One">Please choose One:</option>
+    <select onChange={(e) => setGender(e.target.value ?? '') } name="gender" id="gender">
+      <option disabled value="Please choose One">Please choose One:</option>
         <option value="MALE">MALE</option>
         <option value="FEMALE">FEMALE</option>
       </select></td>  

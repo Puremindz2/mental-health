@@ -39,6 +39,9 @@ const Login = () => {
     window.location.href = '/';
   }
 
+  function fogotPassward() {
+    window.location.href = '/forgotpassword';
+  }
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -106,8 +109,9 @@ const Login = () => {
         required
         />
         
-        <button type="submit">Log in</button>
-        <p1>Don't have an account? <Link to="/signup">Sign up!</Link></p1> 
+        <button style={{marginLeft:'-80px'}}type="submit">Log in</button>
+        <br></br>
+        <p onClick={fogotPassward} style={{textDecoration:'underline'}}>Forgot Password?</p>
       </form>
      </div>
   );

@@ -9,6 +9,7 @@ import appIcon from "./Images/mentalHealthIcon.png";
 import milcah from "./Images/Milcah.jpg"
 import moshe from "./Images/Moshe.jpg"
 import tshepo from "./Images/Tshepo.jpg"
+import vanessa from "./Images/Vanessa.jpeg"
 
 const Login = () => {
   const history = useHistory();
@@ -96,7 +97,7 @@ const Login = () => {
     <div class="card">
     <img src={milcah} style={{width:'100%', height:'300px'}}/>
       <div class="container">
-        <h2>KM Mbuyi</h2>
+        <h2>Milcah Mbuyi</h2>
         <p class="title">Business Analyst and Front End Dev</p>
         <p>Turning challenges into success with every click and design</p>
         <p>kazadimbuyi09@gmail.com</p>
@@ -112,7 +113,7 @@ const Login = () => {
         <h2>Moshe M Mahlaela</h2>
         <p class="title">Full Stack Developer</p>
         <p>The hardest choices require the strongest wills</p>
-        <p>example@example.com</p>
+        <p>moshemahlaela777.com</p>
         <p><button class="button">Contact</button></p>
       </div>
     </div>
@@ -133,12 +134,12 @@ const Login = () => {
 
   <div class="column">
     <div class="card">
-    <img src={milcah} style={{width:'100%', height:'300px'}}/>
+    <img src={vanessa} style={{width:'100%', height:'300px'}}/>
       <div class="container">
-        <h2>Vanessa</h2>
+        <h2>Vanessa Zitha</h2>
         <p class="title">Project Manager</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
+        <p>Take all you can and give nothing back</p>
+        <p>vanessa0zitha@gmail.com</p>
         <p><button class="button">Contact</button></p>
       </div>
     </div>

@@ -39,12 +39,12 @@
 .login-form{
   text-indent: 20px;
   background: white;
-  border: 1px solid #3a3f44;
+  border: 3px solid #BF004A;
   border-radius: 10px;
   position: absolute;
-  width: 400px;
+  width: 350px;
   height: 500px;
-  margin-top: -50px;
+  margin-top: 30px;
 }
 
 .emoji {

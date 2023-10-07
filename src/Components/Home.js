@@ -12,6 +12,7 @@ import PTSD from "./Images/red.jpg"
 import ASMR from "./Images/asmricon.png"
 import vDoc from "./Images/doctor.jpg"
 import bookA from "./Images/bookA.jpg"
+import Aboutus from "./AboutUs"
 
 const Home = () => {
   const myRef = useRef()
@@ -89,8 +90,7 @@ const Home = () => {
         break;
       case 'about':
         // Handle about us click
-        history.push("/about");
-        break;
+        history.push("/Aboutus");
       default:
         break;
     }
@@ -132,32 +132,32 @@ const Home = () => {
 
     <tr>
       <td> <label htmlFor="firstName" id="firstNameLabel">Name: CM Van Jaarsveldt</label><br></br></td>
-      <td> <label htmlFor="firstName" id="firstNameLabel">Name: Milcah's Dad</label><br></br></td>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Name: Dr Makelele</label><br></br></td>
     </tr>
 
     <tr>
       <td> <label htmlFor="firstName" id="firstNameLabel">Job: Occupational Therapist</label><br></br></td>
-      <td> <label htmlFor="firstName" id="firstNameLabel">Job: unknown</label><br></br></td>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Job: Medical Officer in Psychiatric Unit</label><br></br></td>
     </tr>
 
     <tr>
       <td> <label htmlFor="firstName" id="firstNameLabel">Qualification: B.Occ (Pret) OT 0015105</label><br></br></td>
-      <td> <label htmlFor="firstName" id="firstNameLabel">Qualification: unknown</label><br></br></td>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Qualification: Psychiatry</label><br></br></td>
     </tr>
 
     <tr>
       <td> <label htmlFor="firstName" id="firstNameLabel">Workplace: Sebokeng Psychiatric Unit</label><br></br></td>
-      <td> <label htmlFor="firstName" id="firstNameLabel">Workplace: unknown</label><br></br></td>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Workplace: Sebokeng Psychiatric Unit</label><br></br></td>
     </tr>
 
     <tr>
       <td> <label htmlFor="firstName" id="firstNameLabel">Office Hours: 07:30 to 16:00</label><br></br></td>
-      <td> <label htmlFor="firstName" id="firstNameLabel">Office Hours: unknown</label><br></br></td>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Office Hours: 08:00 to 16:00</label><br></br></td>
     </tr>
 
     <tr>
       <td> <label htmlFor="firstName" id="firstNameLabel">Contact: vanjaarsveldtc@gmail.com</label><br></br></td>
-      <td> <label htmlFor="firstName" id="firstNameLabel">Contact: unknown</label><br></br></td>
+      <td> <label htmlFor="firstName" id="firstNameLabel">Contact: makelelemax67@gmail.com</label><br></br></td>
     </tr>
 
       <br></br>
@@ -254,7 +254,6 @@ const Home = () => {
             <ul>
               <li onClick={() => handleMenuClick('profile')}>Profile</li>
               <li onClick={() => handleMenuClick('settings')}>Settings</li>
-              <li onClick={() => handleMenuClick('appointments')}>Appointments</li>
               <li onClick={() => handleMenuClick('about')}>About Us</li>
             </ul>
           </div>
