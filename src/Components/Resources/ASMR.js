@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory} from 'react-router-dom';
 import './ASMR.css';
 import appIcon from '../Images/mentalHealthIcon.png';
-import useSound from 'use-sound'
+//import useSound from 'use-sound'
 import abg1 from '../Images/rainbg.jpg';
 import abg2 from '../Images/summerbg.jpg';
 import abg3 from '../Images/junglebg.jpg';
@@ -113,7 +113,7 @@ const Topbar=() => {
   };
 
   const BoopButton = () => {
-    const [play] = useSound(rainaudio);
+   // const [play] = useSound(rainaudio);
 
 
   }

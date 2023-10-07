@@ -52,7 +52,7 @@ function Signup() {
             gender: "gender",
             age: parseInt(age),
             dob: dob,
-            uuid: "data.user.id",
+            uuid: user.id,
       });
 
       console.log(error)
