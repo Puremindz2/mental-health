@@ -34,39 +34,65 @@ const Topbar=() => {
   const [audio7] = useState(new Audio(spa));
   const [audio8] = useState(new Audio(studyMusic));
 
+  var playing = false;
+  var playing2 = false;
+  var playing3 = false;
+  var playing4 = false;
+  var playing5 = false;
+  var playing6 = false;
+  var playing7 = false;
+  var playing8 = false;
+
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const playAudio = () => {
-    audio.play();
+    playing = !playing;
+    if(playing) audio.play();
+    else{audio.pause();}   
   };
 
   const playAudio2 = () => {
-    audio2.play();
+    playing2 = !playing2
+    if(playing2) audio2.play();
+    else {audio2.pause();}   
   };
 
   const playAudio3 = () => {
-    audio3.play();
+    playing3 = !playing3
+    if(playing3) audio3.play();
+    else {audio3.pause();}  
   };
 
   const playAudio4 = () => {
-    audio4.play();
+    playing4 = !playing4
+    if(playing4) audio4.play();
+    else {audio4.pause();}  
   };
 
   const playAudio5 = () => {
-    audio5.play();
+    playing5 = !playing5
+    if(playing5) audio5.play();
+    else {audio5.pause();}  
   };
 
   const playAudio6 = () => {
-    audio6.play();
+    playing6 = !playing6
+    if(playing6) audio6.play();
+    else {audio6.pause();}  
   };
   const playAudio7 = () => {
-    audio7.play();
+    playing7 = !playing7
+    if(playing7) audio7.play();
+    else {audio7.pause();}  
   };
 
   const playAudio8 = () => {
-    audio8.play();
+    playing8 = !playing8
+    if(playing8) audio8.play();
+    else {audio8.pause();}  
   };
 
 
@@ -112,11 +138,6 @@ const Topbar=() => {
     }
   };
 
-  const BoopButton = () => {
-   // const [play] = useSound(rainaudio);
-
-
-  }
   /*function playAudio() {
     const audioEl = document.getElementsByClassName("audio-element")[0]
     audioEl.play()
@@ -153,7 +174,7 @@ const Topbar=() => {
         <div class="text-context">
         <table class="signup-form" style={{width:'60%', marginTop:'10%', padding:'0px 0px 0px 0px'}} >
         <tr class="x2" style={{marginLeft:'-10%'}}>
-          <td class="table-image">PLAY ASMR SPA<img style={{marginLeft:'0%', width:'100%'}} src={abg1} onClick={() => playAudio()}/> </td>
+          <td class="table-image">PLAY ASMR RAIN<img style={{marginLeft:'0%', width:'100%'}} src={abg1} onClick={playAudio}/> </td>
           <td class="table-image">PLAY ASMR STUDYING MUSIC<img style={{marginLeft:'0%', width:'100%'}} src={abg2} onClick={() => playAudio2()}/></td>
         </tr>
         <tr class="x2" style={{marginLeft:'-10%'}}>
@@ -161,8 +182,8 @@ const Topbar=() => {
           <td class="table-image">PLAY ASMR CONSTRUCTION<img style={{marginLeft:'0%', width:'100%'}} src={abg4} onClick={() => playAudio4()}/></td>
         </tr>
         <tr class="x2" style={{marginLeft:'-10%'}}>
-          <td class="table-image">PLAT ASMR OCEAN WAVES<img style={{marginLeft:'0%', width:'100%'}} src={abg5} onClick={() => playAudio5()}/> </td>
-          <td class="table-image">PLAT ASMR SLEEPING MUSIC<img style={{marginLeft:'0%', width:'100%'}} src={abg6} onClick={() => playAudio6()}/></td>
+          <td class="table-image">PLAY ASMR OCEAN WAVES<img style={{marginLeft:'0%', width:'100%'}} src={abg5} onClick={() => playAudio5()}/> </td>
+          <td class="table-image">PLAY ASMR SLEEPING MUSIC<img style={{marginLeft:'0%', width:'100%'}} src={abg6} onClick={() => playAudio6()}/></td>
         </tr>
         <tr class="x2" style={{marginLeft:'-10%'}}>
           <td class="table-image">PLAY ASMR SPA<img style={{marginLeft:'0%', width:'100%'}} src={abg7} onClick={() => playAudio7()}/> </td>

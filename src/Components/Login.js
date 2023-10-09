@@ -35,6 +35,11 @@ const Login = () => {
   function handleClick2() {
     window.location.href = '/signup';
   }
+
+  function handleClick3() {
+    window.location.href = '/login';
+  }
+
   function goToWelcome() {
     window.location.href = '/';
   }
@@ -86,8 +91,8 @@ const Login = () => {
       </div>
 
       <div class="topbar-right">
-        <button class="topbar-btns">About</button>
-        <button class="topbar-btns">Login</button>
+        <button class="topbar-btns" onClick={handleClick1}>About Us</button>
+        <button class="topbar-btns" onClick={handleClick3}>Login</button>
         <button class="topbar-btns" onClick={handleClick2}>Sign Up</button>
     </div>
     </div>

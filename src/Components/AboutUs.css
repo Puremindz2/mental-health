@@ -52,3 +52,10 @@
   .button:hover {
     background-color: #555;
   }
+
+  .AboutUsBody{
+    /*background-image: url('./Images/bgGif7.gif');
+  /*filter: blur(5px);
+  background-size: cover;
+  background-position: center center; */
+  }

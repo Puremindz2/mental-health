@@ -229,6 +229,12 @@ li button{
   grid-gap: 20px, 50px,20px, 50px;
   grid-template-columns: repeat(3, 1fr);
 }
+
+.grid-item :hover{
+  /*background-image: radial-gradient(circle, black, #0a1627);
+  /*background-color:blue;*/
+
+}
 .wrapper{
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
@@ -281,7 +287,11 @@ li button{
 }
 
 .layout-content{
-  background: #E5E5E5; margin-top: 0%; top:auto;
+  /*background: #E5E5E5; margin-top: 0%; top:auto;*/
+  background-image: url('./Images/bgGif7.gif');
+  /*filter: blur(5px);*/
+  background-size: cover;
+  background-position: center center; 
 }
 
 .body-content{

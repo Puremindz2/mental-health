@@ -40,6 +40,10 @@ const Login = () => {
     window.location.href = '/signup';
   }
 
+  function handleClick3() {
+    window.location.href = '/login';
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -85,7 +89,7 @@ const Login = () => {
 
       <div class="topbar-right">
         <button class="topbar-btns">About Us</button>
-        <button class="topbar-btns">Login</button>
+        <button class="topbar-btns" onClick={handleClick3}>Login</button>
         <button class="topbar-btns" onClick={handleClick2}>Sign Up</button>
     </div>
     </div>
