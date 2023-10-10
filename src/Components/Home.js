@@ -98,18 +98,18 @@ const Home = () => {
 
   return (
     <div >
-      <div class="topbar-container">
-      <div class="topbar-left">
+      <div class="topbar-container-home">
+      <div class="topbar-left-home">
       <img src={appIcon}/>
         <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
 
       </div>
 
-      <div>
-        <h1>Pure Minds - Mental Health</h1>
+      <div style={{position:'absolute', marginLeft:'45%', overflow: 'hidden'}}>
+        <h1> <span> Pure Minds - Mental Health</span></h1>
       </div>
 
-      <div class="topbar-right">
+      <div class="topbar-right-home">
       <div className="home-container">
         <span>
           <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
@@ -122,7 +122,7 @@ const Home = () => {
     </div>
 
     {isMenuOpen && (
-          <div className="menu-dropdown">
+          <div className="menu-dropdown" style={{overflow: 'hidden'}}>
             <ul>
               <li onClick={() => handleMenuClick('profile')}>Profile</li>
               <li onClick={() => handleMenuClick('settings')}>Settings</li>

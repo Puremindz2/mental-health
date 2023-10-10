@@ -43,16 +43,45 @@ header{
   border-right: 50px solid transparent;
   border-bottom: 100px solid #f39c12;
 }
-.topbar-container{
-  position: absolute;font-family: 'Source Sans Pro';
-      font-style: normal;
-      font-weight: 600;
-      font-size: 28px;
-      line-height: 35px;
-      position: relative;
 
+.topbar-container-home{
+      position: absolute; height: 70px;left: 0px;top: 0px;background: #FFFFFF;width: 100%;
       color: #4618c4;
+      border-style: none none solid none;
+    border-color:#BF004A;
+    display: flex;
 }
+
+.app-name{
+position: absolute;height: 20px;left: 37.14%;right: 26.07%;top: calc(50% - 20px/2);
+          font-family: 'Source Sans Pro';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 20px;
+            letter-spacing: -0.588px;
+            cursor: pointer;
+            color: #FFFFFF;
+}
+
+.topbar-left-home{
+  background: #BF004A;position: absolute;left: 0%;right: 0%;top: 0%;bottom: 0%; width: 25%; overflow: auto;
+  flex-grow: 1;
+  flex-basis: 200;
+}
+
+.topbar-left-home img{
+  width: 50px; height: 50px; margin-top: 10px; margin-left: -200px;
+  flex-grow: 1;
+  flex-basis: 200;
+}
+
+.topbar-right-home{
+  position: absolute;right: 0%;right: 0%;top: 0%;bottom: 0%; width: 25%; overflow: none;
+  flex-grow: 1;
+  flex-basis: 200;
+}
+
 .appIcon{
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -228,6 +257,8 @@ li button{
   /**color:#A9A9A9;**/
   grid-gap: 20px, 50px,20px, 50px;
   grid-template-columns: repeat(3, 1fr);
+  flex-grow: 1;
+  flex-basis: 200;
 }
 
 .grid-item :hover{
@@ -241,6 +272,8 @@ li button{
   display:grid;
   grid-template-columns: auto, auto, auto;
   padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .text{
   position: absolute;
@@ -292,6 +325,7 @@ li button{
   /*filter: blur(5px);*/
   background-size: cover;
   background-position: center center; 
+  min-height: 100vh;
 }
 
 .body-content{
