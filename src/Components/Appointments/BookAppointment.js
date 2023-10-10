@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useHistory } from 'react';
 import { SupabaseClient } from '@supabase/supabase-js';
 import './BookAppointment.css'
 import appIcon from '../Images/mentalHealthIcon.png'
@@ -10,16 +10,41 @@ const AppointmentPage = () => {
   const [time, setTime] = useState('');
 const [reason, setReason] = useState('');
 const [brief, setBrief] = useState('');
-/*const [isMenuOpen, setIsMenuOpen] = useState(false);
-const history = useHistory();
+const [isMenuOpen, setIsMenuOpen] = useState(false);
+// /const history = useHistory();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };*/
+  };
+
+  function handleClick() {
+    window.location.href = "/";
+  }
+
+  const handleMenuClick = (menuItem) => {
+    // Handle menu item click (e.g., navigate to different pages)
+    switch (menuItem) {
+      case 'profile':
+        window.location.href = "/profile";
+        break;
+      case 'settings':
+        // Handle settings click
+        window.location.href = "/settings";
+        break;
+      case 'appointments':
+        // Handle chat click
+        window.location.href = "/appointments";
+        break;
+      case 'about':
+        // Handle about us click
+        window.location.href = "/Aboutus";
+      default:
+        break;
+    }
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     const appointment = {
       name,
       email,
@@ -29,19 +54,13 @@ const history = useHistory();
       brief
     };
 
-/*function goHome() {
-    history.push("/")
-  }*/
-
     const { error } = await supabaseClient.from('appointments').insert([appointment]);
-
     if (error) {
       console.error(error);
       return;
     }
 
     alert('Your appointment has been booked successfully!');
-
     // Clear the form fields
     setName('');
     setEmail('');
@@ -50,35 +69,44 @@ const history = useHistory();
     setReason('');
     setBrief('');
   };
-
-/*const handleMenuClick = (menuItem) => {
-    // Handle menu item click (e.g., navigate to different pages)
-    switch (menuItem) {
-      case 'profile':
-        //history.push("/profile");
-        break;
-      case 'settings':
-        // Handle settings click
-        //history.push("/settings");
-        break;
-      case 'appointments':
-        // Handle chat click
-        //history.push("/appointments");
-        break;
-      case 'about':
-        // Handle about us click
-        //history.push("/Aboutus");
-      default:
-        break;
-    }
-  };*/
-
   const supabaseClient = new SupabaseClient('https://heluyldjbfyghwatcrpe.supabase.co', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhlbHV5bGRqYmZ5Z2h3YXRjcnBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYwMDQ0MDQsImV4cCI6MjAxMTU4MDQwNH0.hd4SzvPBf9U5_y4hdiNvHRubtv9Y04ddRBvLx5m6MF4");
 
   return (
     <div class='bookApp'>
 
-      <h1>Book an Appointment</h1>
+      <div class="topbar-container-home">
+      <div class="topbar-left-home">
+      <img src={appIcon}/>
+        <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
+
+      </div>
+
+      <div style={{position:'absolute', marginLeft:'45%', overflow: 'hidden'}}>
+        <h1> <span> Book an Appointment</span></h1>
+      </div>
+
+      <div class="topbar-right-home">
+      <div className="home-container">
+        <span>
+          <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+            <div className="menu-line"></div>
+            <div className="menu-line"></div>
+            <div className="menu-line"></div>
+          </div>
+        </span>
+      </div>
+    </div>
+
+    {isMenuOpen && (
+          <div className="menu-dropdown" style={{overflow: 'hidden'}}>
+            <ul>
+              <li onClick={() => handleMenuClick('profile')}>Profile</li>
+              <li onClick={() => handleMenuClick('settings')}>Settings</li>
+              <li onClick={() => handleMenuClick('about')}>About Us</li>
+            </ul>
+          </div>
+        )}
+    </div>
 
       <form onSubmit={handleSubmit} class='bookAppForm'>
         <img style={{height:'150px', width:'150px'}} src={appIcon}/>

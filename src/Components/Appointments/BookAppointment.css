@@ -29,7 +29,7 @@
     width: 500px;
   height: 550px;
   margin-top: 100px;
-  margin-left: 25%;
+  margin-left: 35%;
     
   }
   
@@ -84,10 +84,16 @@
         filter: blur(0);
   }
 
-  .bookAppForm tr, td{
+  .bookAppForm tr{
     margin-left: 10px;
     border: none;
     left: 0px;
+    
+  }
+
+  .bookAppForm input{
+    width: 60%;
+    
   }
 
   .signup-form img{
