@@ -27,7 +27,7 @@ const Home = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   function handleClick() {
-    history.push("/depression")
+    history.push("/")
   }
 
   function handleClick2() {
@@ -120,6 +120,16 @@ const Home = () => {
         </span>
       </div>
     </div>
+
+    {isMenuOpen && (
+          <div className="menu-dropdown">
+            <ul>
+              <li onClick={() => handleMenuClick('profile')}>Profile</li>
+              <li onClick={() => handleMenuClick('settings')}>Settings</li>
+              <li onClick={() => handleMenuClick('about')}>About Us</li>
+            </ul>
+          </div>
+        )}
     </div>
 
     <div ref={myRef2} class="docPopUp" style={{display:'none', position:'absolute',zIndex:1,height:'200px'}}>
@@ -247,17 +257,6 @@ const Home = () => {
         </div>
         </div> 
 
-        
-
-        {isMenuOpen && (
-          <div className="menu-dropdown">
-            <ul>
-              <li onClick={() => handleMenuClick('profile')}>Profile</li>
-              <li onClick={() => handleMenuClick('settings')}>Settings</li>
-              <li onClick={() => handleMenuClick('about')}>About Us</li>
-            </ul>
-          </div>
-        )}
       </div>
   );
 };
