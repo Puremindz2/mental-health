@@ -18,7 +18,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
   };
 
   function handleClick() {
-    window.location.href = "/";
+    window.location.href = "/home";
   }
 
   const handleMenuClick = (menuItem) => {
@@ -69,6 +69,8 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
     setReason('');
     setBrief('');
   };
+
+    
   const supabaseClient = new SupabaseClient('https://heluyldjbfyghwatcrpe.supabase.co', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhlbHV5bGRqYmZ5Z2h3YXRjcnBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYwMDQ0MDQsImV4cCI6MjAxMTU4MDQwNH0.hd4SzvPBf9U5_y4hdiNvHRubtv9Y04ddRBvLx5m6MF4");
 
   return (
@@ -120,17 +122,17 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
             <input type="email"placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)}/></td>
         </tr>
 
-        <tr>
-            <td><label>Date</label><br></br>
-            <input type="date" value={date} onChange={(event) => setDate(event.target.value)}/></td>
+        <tr >
+            <td><label >Date</label><br></br>
+            <input style={{marginLeft:'-15%'}} type="date" value={date} onChange={(event) => setDate(event.target.value)}/></td>
 
             <td><label>Time</label><br></br>
-            <input type="time" value={time} onChange={(event) => setTime(event.target.value)}/></td>
+            <input style={{marginLeft:'-12%'}} type="time" value={time} onChange={(event) => setTime(event.target.value)}/></td>
         </tr>
 
         <tr>
             <td><label>Reason</label><br></br>
-            <select name="reason" id="reason" placeholder='Please Select One Option' value={reason} onChange={(event) => setReason(event.target.value)}>
+            <select style={{marginLeft:'-12%', width:'60%'}} name="reason" id="reason" placeholder='Please Select One Option' value={reason} onChange={(event) => setReason(event.target.value)}>
                 <option value="empty"></option>
                 <option value="Depression">Depression</option>
                 <option value="Anxiety">Anxiety</option>
@@ -139,7 +141,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
             </select></td>
 
             <td><label>Brief text about condition</label><br></br>
-            <textarea type="text" value={brief} onChange={(event) => setBrief(event.target.value)}/></td>
+            <textarea style={{marginLeft:'-12%'}} type="text" value={brief} onChange={(event) => setBrief(event.target.value)}/></td>
         </tr>
         </table>
 

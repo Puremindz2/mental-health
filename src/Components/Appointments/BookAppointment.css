@@ -91,6 +91,9 @@
     
   }
 
+  .bookAppForm button{
+    cursor: pointer;
+  }
   .bookAppForm input{
     width: 60%;
     

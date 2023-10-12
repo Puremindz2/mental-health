@@ -1,18 +1,25 @@
-table {
-  width: 100%;
-  border-collapse: collapse;
+.VA-layout{
+  min-height: fit-content;
+  background-color:#f1c0e3;
 }
 
-th,
-td {
+.viewAppointmentForm {
+  margin-top: 20%;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.viewAppointmentForm {
   border: 1px solid black;
   padding: 5px;
 }
 
-th {
+.viewAppointmentForm th {
   background-color: #ccc;
 }
 
-tr:nth-child(even) {
+.viewAppointmentForm tr:nth-child(even) {
   background-color: #eee;
 }
+

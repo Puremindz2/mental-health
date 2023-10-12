@@ -231,7 +231,7 @@ export default function Account({ session }) {
       </div>
       <br></br>
       <div>
-        <button className="button block primary" type="submit" disabled={loading}>
+        <button style={{width:'30%'}}className="button block primary" type="submit" disabled={loading}>
           {loading ? 'Loading ...' : 'Update'}
         </button>
       </div>

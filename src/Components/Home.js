@@ -187,7 +187,7 @@ const Home = () => {
         <div class="layout-content">
         
         <div class="wrapper">
-        <div class="grid-item">
+        <div class="grid-item" onClick={displayDoc}>
             <img class="addDocIcon" src={vDoc} />
                 <div class="heading" onClick={displayDoc}>
                     <p id="mouse-pinter">View Doctors</p>
@@ -195,7 +195,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div class="grid-item">
+            <div class="grid-item" onClick={handleClick7}>
             <img class="addDocIcon" src={bookA} />
                 <div class="heading" onClick={handleClick7}>
                     <p id="mouse-pinter">Appointments</p>
@@ -203,7 +203,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div class="grid-item">
+            <div class="grid-item" onClick={handleClick6}>
                 <img class="addDocIcon" src={ASMR}/>
                 <div class="heading" onClick={handleClick6}>
                     <p id="mouse-pinter">ASMR SLEEP</p>
@@ -211,7 +211,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div class="grid-item">
+            <div class="grid-item" style={{backgroundColor:'#3952db'}} onClick={handleClick2}>
             <img class="addDocIcon" src={anxiety} />
                 <div class="heading" onClick={handleClick2}>
                     <p id="mouse-pinter">Anxiety</p>
@@ -219,7 +219,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div class="grid-item">
+            <div class="grid-item" style={{backgroundColor:'lightgreen'}} onClick={handleClick}>
                 <img class="addDocIcon" src={depressionIcon}/>
                 <div class="heading" onClick={handleClick}>
                     <p id="mouse-pinter">Depression</p>
@@ -227,15 +227,15 @@ const Home = () => {
                 </div>
             </div>
 
-            <div class="grid-item">
+            <div class="grid-item" style={{backgroundColor:'pink'}} onClick={handleClick3}>
                 <img class="addDocIcon" src={helpIcon}/>
-                <div class="heading"onClick={handleClick3}>
+                <div class="heading" onClick={handleClick3}>
                     <p id="mouse-pinter">OCD</p>
                 <p class="descriptions">Learn and inform yourself all about OCD</p>
                 </div>
             </div>
 
-            <div class="grid-item">
+            <div class="grid-item" style={{backgroundColor:'#cf8de9'}} onClick={handleClick4}>
                 <img class="addDocIcon" src={checkAppointment}/>
                 <div class="heading" onClick={handleClick4}>
                     <p id="mouse-pinter">Personality Disorder</p>
@@ -243,7 +243,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div class="grid-item">
+            <div class="grid-item" style={{backgroundColor:'#cf3556'}} onClick={handleClick5}>
                 <img class="addDocIcon" src={PTSD}/>
                 <div class="heading" onClick={handleClick5}>
                     <p id="mouse-pinter">PTSD</p>
