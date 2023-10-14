@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SupabaseClient } from '@supabase/supabase-js';
+import { supabase } from '../../supabaseClient';
 import appIcon from "../Images/mentalHealthIcon.png";
 import './ViewAppointment.css'
 
@@ -14,6 +15,29 @@ const AppointmentsPage = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  async function cancelAppointment(appointmentId) {
+    try {
+      const { data, error } = await supabase
+      .from('appointments')
+      .update({ appstatus: 'cancelled' })
+      .eq('appointment_id', appointmentId);
+    
+
+      if (error) {
+        throw error;
+      }
+
+      // Handle success (e.g., display a success message)
+      console.log('Appointment cancelled:', data);
+      
+      // Reload the appointments after cancellation
+      fetchAppointments();
+    } catch (error) {
+      // Handle error (e.g., display an error message)
+      console.error('Error cancelling appointment:', error.message);
+    }
+  }
 
   const handleMenuClick = (menuItem) => {
     // Handle menu item click (e.g., navigate to different pages)
@@ -46,6 +70,7 @@ const AppointmentsPage = () => {
       const { data, error } = await supabaseClient
         .from('appointments')
         .select('*')
+        .eq('appstatus', 'booked')
         //.eq('user_id', 'e078a3e2-9d3a-4cd0-9d8e-4103ffe57ae8');
 
       if (error) {
@@ -118,8 +143,11 @@ const AppointmentsPage = () => {
               <td style={{width:'10%', border: '1px solid black'}}>{appointment.time}</td>
               <td style={{width:'10%', border: '1px solid black'}}>{appointment.reason}</td>
               <td style={{width:'10%', border: '1px solid black'}}>{appointment.brief}</td>
-              <td style={{width:'10%', border: '1px solid black'}}>{appointment.status}</td>
+              <td style={{width:'10%', border: '1px solid black'}}>{appointment.appstatus}</td>
               <td style={{width:'30%', border: '1px solid black'}}>{appointment.comment}</td>
+              <td><button onClick={() => cancelAppointment(appointment.id)}>Cancel Appointment</button></td>
+         
+              <td></td>
             </tr>
           ))}
         </tbody>

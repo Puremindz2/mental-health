@@ -162,8 +162,6 @@ export default function Account({ session }) {
       <div className="menu-dropdown">
         <ul>
           <li onClick={() => handleMenuClick('profile')}>Profile</li>
-          <li onClick={() => handleMenuClick('settings')}>Settings</li>
-          <li onClick={() => handleMenuClick('appointments')}>Appointments</li>
           <li onClick={() => handleMenuClick('about')}>About Us</li>
         </ul>
       </div>

@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './Login.css';
 import uIcon from "./Images/uIcon.png";
 import appIcon from "./Images/mentalHealthIcon.png";
+import Home from './Home';
 
 const Login = () => {
   const history = useHistory();
@@ -63,7 +64,7 @@ const Login = () => {
         console.log('Logged in user:', user);
         toast.success('Login successful!');
         // Redirect to the home page after successful login
-        history.push('/home');
+        window.location.href = '/home'
       }
     } catch (error) {
       console.error('Error connecting to Supabase:', error);
@@ -114,7 +115,7 @@ const Login = () => {
         required
         />
         
-        <button style={{marginLeft:'-80px'}}type="submit">Log in</button>
+        <button  style={{marginLeft:'-80px'}}type="submit">Log in </button >
         <br></br>
         <p onClick={fogotPassward} style={{textDecoration:'underline'}}>Forgot Password?</p>
       </form>
