@@ -171,7 +171,6 @@ export default function Account({ session }) {
     </div>
     <div class="profile-form">
     <form onSubmit={updateProfile} class="form-widget">
-    <img class="userIcon1"  src={appIcon}/>
       <div>
       <Avatar
       url={avatar_url}
@@ -180,7 +179,7 @@ export default function Account({ session }) {
         updateProfile(event, url)
       }}
     />
-      <br></br>
+      
         <label htmlFor="useremail">User Email</label><br></br>
         <input
           id="useremail"
