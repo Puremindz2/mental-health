@@ -27,10 +27,6 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
       case 'profile':
         window.location.href = "/profile";
         break;
-      case 'settings':
-        // Handle settings click
-        window.location.href = "/settings";
-        break;
       case 'appointments':
         // Handle chat click
         window.location.href = "/appointments";
@@ -103,7 +99,6 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
           <div className="menu-dropdown" style={{overflow: 'hidden'}}>
             <ul>
               <li onClick={() => handleMenuClick('profile')}>Profile</li>
-              <li onClick={() => handleMenuClick('settings')}>Settings</li>
               <li onClick={() => handleMenuClick('about')}>About Us</li>
             </ul>
           </div>

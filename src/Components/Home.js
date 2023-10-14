@@ -27,7 +27,7 @@ const Home = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   function handleClick() {
-    history.push("/")
+    window.location.href ="/"
   }
 
   function handleClick2() {
@@ -83,17 +83,13 @@ const Home = () => {
       case 'profile':
         window.location.href = "/profile";
         break;
-      case 'settings':
-        // Handle settings click
-        history.push("/settings");
-        break;
       case 'appointments':
         // Handle chat click
-        history.push("/appointments");
+        window.location.href ="/appointments";
         break;
       case 'about':
         // Handle about us click
-        history.push("/Aboutus");
+        window.location.href ="/Aboutus";
       default:
         break;
     }
@@ -128,7 +124,6 @@ const Home = () => {
           <div className="menu-dropdown" style={{overflow: 'hidden'}}>
             <ul>
               <li onClick={() => handleMenuClick('profile')}>Profile</li>
-              <li onClick={() => handleMenuClick('settings')}>Settings</li>
               <li onClick={() => handleMenuClick('about')}>About Us</li>
             </ul>
           </div>
