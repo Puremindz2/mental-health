@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Signup.css";
 import { supabase } from "../supabaseClient";
 import { Link, useHistory } from 'react-router-dom';
 import appIcon from "./Images/mentalHealthIcon.png";
+
 
 function Signup() {
   const history = useHistory();
@@ -16,6 +17,17 @@ function Signup() {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -24,6 +36,9 @@ function Signup() {
       toast.error('Passwords do not match. Please re-enter your password.');
       return;
     }
+
+
+
 
     try {
       // const { data } = await supabase.auth.getUser();
@@ -37,7 +52,7 @@ function Signup() {
             gender: gender,
             age: age,
             dob: dob,
-            //uuid: user.id,
+            uuid: session?.user.id,
           },
         },
       });
@@ -134,7 +149,7 @@ function Signup() {
     /></td>
     </tr>
 
-    <tr>
+   
     <td><label htmlFor="age">Age:</label><br></br>
     
     <input
@@ -146,13 +161,19 @@ function Signup() {
       required
     /></td>
 
-    <td> <label htmlFor="gender">Gender:</label><br></br>
-    <select onChange={(e) => setGender(e.target.value ?? '') } name="gender" id="gender">
-      <option disabled value="Please choose One">Please choose One:</option>
-        <option value="MALE">MALE</option>
-        <option value="FEMALE">FEMALE</option>
-      </select></td>  
-    </tr>
+<select onChange={(e) => {
+  const selectedValue = e.target.value;
+  if (selectedValue !== "Please choose One") {
+    setGender(selectedValue);
+  } else {
+    setGender(''); // Set it to an empty string or any other default value
+  }
+}} name="gender" id="gender">
+  <option disabled value="Please choose One">Please choose One</option>
+  <option value="MALE">MALE</option>
+  <option value="FEMALE">FEMALE</option>
+</select>
+
 
     <tr>
        <td><label htmlFor="dob">Date of Birth:</label><br></br>
