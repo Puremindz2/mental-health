@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getUserData, updateUser} from '../services/supabaseServices';
 import { supabase } from '../supabaseClient';
-
+import './Profile.css';
 
 const SupabaseGateway = () => {
   const [userId, setUserId] = useState('');
@@ -57,39 +57,80 @@ const SupabaseGateway = () => {
   }, [userId]);
 
   return (
-    <div>
+    <div class="profile-form">
+    <form onSubmit={updateProfile} class="form-widget">
+    <img class="userIcon1"  src={appIcon}/>
       <div>
-        <label>User Name</label>
+      <br></br>
+        <label htmlFor="useremail">User Email</label><br></br>
         <input
+          id="useremail"
           type="text"
-          value={session?.user.id || ''}
-          readOnly
+          value={session?.user?.userEmail || ''}
+          disabled
+        />
+      </div>
+      
+      <div>
+        <label htmlFor="firstName">First Name</label><br></br>
+        <input
+          id="firstName"
+          type="text"
+          required
+          value={firstName || ''}
+          onChange={(e) => setFirstName(e.target.value)}
         />
       </div>
       <div>
-        <label>User Surname</label>
+        <label htmlFor="lastName">Last Name</label><br></br>
         <input
+          id="lastName"
           type="text"
-          value={session?.user.user_metadata.last_name || ''}
-          readOnly
+          required
+          value={lastName || ''}
+          onChange={(e) => setLastName(e.target.value)}
         />
       </div>
       <div>
-        <label>User role</label>
+        <label htmlFor="age">Age</label><br></br>
         <input
-          type="text"
-          value={session?.user.user_metadata.user_role || ''}
-          readOnly
+          id="age"
+          type="number"
+          value={age || ''}
+          onChange={(e) => setAge(e.target.value)}
         />
       </div>
       <div>
-        <label>Department</label>
+        <label htmlFor="gender">Gender</label><br></br>
         <input
+          id="gender"
           type="text"
-          value={session?.user.user_metadata.user_dept || ''}
-          onChange={(e) => setUserId(e.target.value)}
+          value={gender || ''}
+          onChange={(e) => setGender(e.target.value)}
         />
       </div>
+      <div>
+        <label htmlFor="dob">Date of Birth</label><br></br>
+        <input
+          id="dob"
+          type="date"
+          value={dob || ''}
+          onChange={(e) => setDob(e.target.value)}
+        />
+      </div>
+      <br></br>
+      <div>
+        <button style={{width:'30%'}}className="button block primary" type="submit" disabled={loading} onClick={(e) => updateProfile ()}>
+          {loading ? 'Loading ...' : 'Update' }
+        </button>
+      </div>
+      <br></br>
+      <div>
+        <button class="button-block-primary" type="button" onClick={(e) => signOut()}>
+          Sign Out
+        </button>
+      </div>
+    </form>
     </div>
   );
 };

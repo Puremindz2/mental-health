@@ -3,6 +3,7 @@ import { supabase } from '../supabaseClient';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import appIcon from "./Images/mentalHealthIcon.png";
 import './Profile.css';
+import Avatar from './Avatar';
 
 export default function Account({ session }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,7 +49,7 @@ export default function Account({ session }) {
   };
 
   const [loading, setLoading] = useState(true);
-  const [avatarUrl, setAvatarUrl] = useState(null);
+  const [avatar_url, setAvatarUrl] = useState(null);
   const [userEmail,setUserEmail] = useState(null);
   const [firstName,setFirstName] = useState(null);
   const [lastName,setLastName] = useState(null);
@@ -70,7 +71,7 @@ export default function Account({ session }) {
       const { user } = session;
 
       let { data, error } = await supabase
-        .from('profiles')
+        .from('users')
         .select(`firstName, lastName, age ,gender , dob, avatar_url`)
         .single();
 
@@ -114,16 +115,16 @@ export default function Account({ session }) {
       age,
       dob,
       gender,
-      avatar_url: avatarUrl, // Use the correct key
+      avatar_url: avatar_url, // Use the correct key
       updated_at: new Date(),
     };
 
-    let { error } = await supabase.from('profiles').upsert(updates);
+    let { error } = await supabase.from('users').upsert(updates);
 
     if (error) {
       alert(error.message);
     } else {
-      setAvatarUrl(avatarUrl);
+      setAvatarUrl(avatar_url);
     }
     setLoading(false);
 
@@ -172,6 +173,13 @@ export default function Account({ session }) {
     <form onSubmit={updateProfile} class="form-widget">
     <img class="userIcon1"  src={appIcon}/>
       <div>
+      <Avatar
+      url={avatar_url}
+      size={150}
+      onUpload={(event, url) => {
+        updateProfile(event, url)
+      }}
+    />
       <br></br>
         <label htmlFor="useremail">User Email</label><br></br>
         <input
@@ -231,10 +239,11 @@ export default function Account({ session }) {
       </div>
       <br></br>
       <div>
-        <button style={{width:'30%'}}className="button block primary" type="submit" disabled={loading}>
-          {loading ? 'Loading ...' : 'Update'}
+        <button style={{width:'30%'}}className="button block primary" type="submit" disabled={loading} onClick={(e) => updateProfile ()}>
+          {loading ? 'Loading ...' : 'Update' }
         </button>
       </div>
+      
       <br></br>
       <div>
         <button class="button-block-primary" type="button" onClick={(e) => signOut()}>
