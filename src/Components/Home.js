@@ -53,6 +53,9 @@ const Home = () => {
   function handleClick7() {
     window.location.href = '/Appointment';
   }
+  function handleClick8() {
+    window.location.href = '/depression';
+  }
 
   
 
@@ -78,7 +81,7 @@ const Home = () => {
     // Handle menu item click (e.g., navigate to different pages)
     switch (menuItem) {
       case 'profile':
-        history.push("/profile");
+        window.location.href = "/profile";
         break;
       case 'settings':
         // Handle settings click
@@ -219,9 +222,9 @@ const Home = () => {
                 </div>
             </div>
 
-            <div class="grid-item" style={{backgroundColor:'lightgreen'}} onClick={handleClick}>
+            <div class="grid-item" style={{backgroundColor:'lightgreen'}} onClick={handleClick8}>
                 <img class="addDocIcon" src={depressionIcon}/>
-                <div class="heading" onClick={handleClick}>
+                <div class="heading" onClick={handleClick8}>
                     <p id="mouse-pinter">Depression</p>
                 <p class="descriptions">Learn and inform yourself all about depression</p>
                 </div>

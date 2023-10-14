@@ -300,20 +300,20 @@ a {
 
 
 .column1{
-  animation: cssAnimation 5s linear infinite;
+  animation: cssAnimation 10s linear infinite;
   opacity: 1;
   margin-top: -100px;
   visibility: visible;
 }
 
 .column2{
-  animation: cssAnimation 6s linear infinite;
+  animation: cssAnimation 11s linear infinite;
   opacity: 1;
   visibility: visible;
 }
 
 .column3{
-  animation: cssAnimation 7s linear infinite;
+  animation: cssAnimation 12s linear infinite;
   opacity: 1;
   visibility: visible;
 }

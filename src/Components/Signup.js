@@ -49,7 +49,7 @@ function Signup() {
       const { error } = await supabase.from("users").insert({
         firstName: firstName,
             lastName: lastName,
-            gender: "gender",
+            gender: gender,
             age: parseInt(age),
             dob: dob,
             uuid: user.id,
@@ -57,7 +57,7 @@ function Signup() {
 
       console.log(error)
 
-      if (!error) {
+      if (error) {
         console.log('Signup error:', error);
         toast.error('Account creation failed. Please try again.');
       } else {
