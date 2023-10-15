@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { supabase } from "../supabaseClient";
+import bgImg from './Images/BGforgotpass.jpeg';
+import './Profile.css'
+
 class ForgotPassword extends Component {
   constructor(props) {
     super(props);
@@ -41,12 +44,14 @@ class ForgotPassword extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Forgot Password</h2>
+      <div className='forgetPasswordBgImage'>
+        <div className='fgt-content1'>
+        
         {this.state.message && <div className="success">{this.state.message}</div>}
         {this.state.error && <div className="error">{this.state.error}</div>}
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className='fgt-content'>
           <div>
+          <h2 style={{color:'white'}}>Forgot Password</h2><br></br>
             <label htmlFor="email">Email:</label>
             <input
               type="email"
@@ -61,6 +66,7 @@ class ForgotPassword extends Component {
             <button type="submit">Reset Password</button>
           </div>
         </form>
+        </div>
       </div>
     );
   }
