@@ -4,7 +4,7 @@
   font-family: Arial, sans-serif;
   font-size: 30px;
   cursor: pointer;
-  min-height: 97vh;
+  min-height: 100vh;
   border: solid 3px;
   background-image: url('./Images/bgGif3.gif');
   /*filter: blur(5px);*/
