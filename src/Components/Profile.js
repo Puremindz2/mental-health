@@ -97,7 +97,7 @@ export default function Account({ session }) {
     history.push('/');
   }
   async function updateProfile(event) {
-    event.preventDefault();
+    //event.preventDefault();
 
     setLoading(true);
     if (!session || !session.user) {

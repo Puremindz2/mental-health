@@ -51,7 +51,7 @@ class ForgotPassword extends Component {
         {this.state.error && <div className="error">{this.state.error}</div>}
         <form onSubmit={this.handleSubmit} className='fgt-content'>
           <div>
-          <h2>Forgot Password</h2><br></br>
+          <h2 style={{color:'white'}}>Forgot Password</h2><br></br>
             <label htmlFor="email">Email:</label>
             <input
               type="email"

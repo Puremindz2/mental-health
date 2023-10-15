@@ -3,7 +3,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Signup.css";
 import { supabase } from "../supabaseClient";
-import { Link, useHistory } from 'react-router-dom';
+import {  useHistory } from 'react-router-dom';
 import appIcon from "./Images/mentalHealthIcon.png";
 
 
@@ -41,7 +41,6 @@ function Signup() {
 
 
     try {
-      // const { data } = await supabase.auth.getUser();
       const  user= await supabase.auth.signUp({
         email: userEmail,
         password: userPassword,

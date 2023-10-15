@@ -229,7 +229,7 @@
   }
 
   .fgt-content label, h2, input{
-    color: white;
+    /*color: white;*/
     align-items: start;
     margin-left: 1%;
     

@@ -13,6 +13,11 @@ const SupabaseGateway = () => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
     });
+    useEffect(() => {
+      if (session) {
+        fetchUserData();
+      }
+    }, [session]);
 
     supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
