@@ -50,19 +50,16 @@ const WelcomePage = () => {
     // Handle menu item click (e.g., navigate to different pages)
     switch (menuItem) {
       case 'profile':
-        history.push("/profile");
+        window.location.href ="/profile";
         break;
-      case 'settings':
-        // Handle settings click
-        history.push("/settings");
-        break;
-      case 'appointments':
+
+      case 'appointment':
         // Handle chat click
-        history.push("/appointments");
+        window.location.href ="/appointment";
         break;
-      case 'about':
+      case 'Aboutus':
         // Handle about us click
-        history.push("/about");
+        window.location.href ="/Aboutus";
         break;
       default:
         break;
@@ -98,9 +95,8 @@ const WelcomePage = () => {
       <div className="menu-dropdown">
         <ul>
           <li onClick={() => handleMenuClick('profile')}>Profile</li>
-          <li onClick={() => handleMenuClick('settings')}>Settings</li>
-          <li onClick={() => handleMenuClick('appointments')}>Appointments</li>
-          <li onClick={() => handleMenuClick('about')}>About Us</li>
+          <li onClick={() => handleMenuClick('appointment')}>Appointments</li>
+          <li onClick={() => handleMenuClick('Aboutus')}>About Us</li>
         </ul>
       </div>
     )}
@@ -115,10 +111,7 @@ const WelcomePage = () => {
           <td class="table-image"><img src={bookA} onClick={handleClick3}/> </td>
           <td class="table-image"><img src={viewA} onClick={handleClick4}/></td>
         </tr>
-        <tr class="welome-table-text">
-          <td>View Appointments.</td>
-          <td>Book Appointment.</td>
-        </tr>
+       
         </table>
       
     </div>

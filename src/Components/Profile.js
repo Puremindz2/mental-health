@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import appIcon from "./Images/mentalHealthIcon.png";
 import './Profile.css';
 import Avatar from './Avatar';
+import backIcon from './Images/BackIcon.png'
 
 export default function Account({ session }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,19 +30,15 @@ export default function Account({ session }) {
     // Handle menu item click (e.g., navigate to different pages)
     switch (menuItem) {
       case 'profile':
-        history.push("/profile");
+        window.location.href = "/profile";
         break;
-      case 'settings':
-        // Handle settings click
-        history.push("/settings");
-        break;
-      case 'appointments':
+      case 'appointment':
         // Handle chat click
-        history.push("/appointments");
+        window.location.href = "/appointment";
         break;
       case 'about':
         // Handle about us click
-        history.push("/AboutUs");
+        window.location.href = "/Aboutus";
         break;
       default:
         break;
@@ -95,7 +92,7 @@ export default function Account({ session }) {
   }, [session]);
   const signOut = async () => {
     await supabase.auth.signOut();
-    history.push('/');
+    window.location.href = '/';
   }
   async function updateProfile(event) {
     //event.preventDefault();
@@ -138,8 +135,8 @@ export default function Account({ session }) {
     <div class="profile">
       <div class="topbar-container">
       <div class="topbar-left">
-      <img src={appIcon}/>
-        <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
+      <img src={backIcon} onClick={handleClick}  style={{cursor:'pointer'}}/>
+        <span class="app-name" onClick={handleClick}>Back</span>
 
       </div>
 

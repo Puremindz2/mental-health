@@ -11,7 +11,7 @@ import abg5 from '../Images/ocwaves.jpg';
 import abg6 from '../Images/sm.jpg';
 import abg7 from '../Images/spa.jpg';
 import abg8 from '../Images/asmrbg2.jpg';
-
+import backIcon from '../Images/BackIcon.png'
 
 import summerdayaudio from '../Sounds/franklin-park-stream-mid-day-spring-sunny-19728.mp3';
 import jungleaudio2 from '../Sounds/nature-soundstropicaljunglebirds-108380.mp3';
@@ -119,19 +119,15 @@ const Topbar=() => {
     // Handle menu item click (e.g., navigate to different pages)
     switch (menuItem) {
       case 'profile':
-        history.push("/profile");
+        window.location.href ="/profile";
         break;
-      case 'settings':
-        // Handle settings click
-        history.push("/settings");
-        break;
-      case 'appointments':
+      case 'appointment':
         // Handle chat click
-        history.push("/appointments");
+        window.location.href ="/appointment";
         break;
       case 'about':
         // Handle about us click
-        history.push("/about");
+        window.location.href ="/Aboutus";
         break;
       default:
         break;
@@ -147,8 +143,9 @@ const Topbar=() => {
     <div class="asmr-class">
     <div class="asmr-topbar-container">
       <div class="topbar-left">
-      <img src={appIcon}/>
-        <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
+      <img src={backIcon} onClick={handleClick}  style={{cursor:'pointer'}}/>
+        <span class="app-name" onClick={handleClick}>Back</span>
+
 
       </div>
 
@@ -196,8 +193,7 @@ const Topbar=() => {
   <div className="menu-dropdown">
     <ul>
       <li onClick={() => handleMenuClick('profile')}>Profile</li>
-      <li onClick={() => handleMenuClick('settings')}>Settings</li>
-      <li onClick={() => handleMenuClick('appointments')}>Appointments</li>
+      <li onClick={() => handleMenuClick('appointment')}>Appointments</li>
       <li onClick={() => handleMenuClick('about')}>About Us</li>
     </ul>
   </div>)}

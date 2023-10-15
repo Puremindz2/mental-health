@@ -6,6 +6,7 @@ import uIcon from '../Images/uIcon.png'
 import dep1 from '../Images/depimg.jpg'
 import dep2 from '../Images/ptsd2.jpeg'
 import dep3 from '../Images/ptsd3.jpg'
+import backIcon from '../Images/BackIcon.png'
 
 const Topbar=() => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,19 +25,15 @@ const Topbar=() => {
     // Handle menu item click (e.g., navigate to different pages)
     switch (menuItem) {
       case 'profile':
-        history.push("/profile");
+         window.location.href ="/profile";
         break;
-      case 'settings':
-        // Handle settings click
-        history.push("/settings");
-        break;
-      case 'appointments':
+      case 'appointment':
         // Handle chat click
-        history.push("/appointments");
+         window.location.href ="/appointment";
         break;
       case 'about':
         // Handle about us click
-        history.push("/about");
+         window.location.href ="/Aboutus";
         break;
       default:
         break;
@@ -46,8 +43,9 @@ const Topbar=() => {
     <div class="depression">
     <div class="topbar-container" style={{borderColor:'orange'}}>
       <div class="topbar-left" style={{backgroundColor:'orange'}}>
-      <img src={appIcon}/>
-        <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
+      <img src={backIcon} onClick={handleClick}  style={{cursor:'pointer'}}/>
+        <span class="app-name" onClick={handleClick}>Back</span>
+
 
       </div>
 
@@ -135,8 +133,7 @@ const Topbar=() => {
   <div className="menu-dropdown">
     <ul>
       <li onClick={() => handleMenuClick('profile')}>Profile</li>
-      <li onClick={() => handleMenuClick('settings')}>Settings</li>
-      <li onClick={() => handleMenuClick('appointments')}>Appointments</li>
+      <li onClick={() => handleMenuClick('appointment')}>Appointments</li>
       <li onClick={() => handleMenuClick('about')}>About Us</li>
     </ul>
   </div>)}

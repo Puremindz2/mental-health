@@ -10,7 +10,7 @@ import checkAppointment from "./Images/purple.png";
 import appIcon from './Images/mentalHealthIcon.png' 
 import PTSD from "./Images/red.png"
 import ASMR from "./Images/asmricon.png"
-import vDoc from "./Images/doctor.jpg"
+import vDoc from "./Images/doctor.png"
 import bookA from "./Images/bookA.png"
 import Aboutus from "./AboutUs"
 
