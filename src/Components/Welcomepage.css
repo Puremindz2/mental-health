@@ -1,17 +1,16 @@
-.welcome-container {
+.welcome-container-1 {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   font-size: 30px;
-  /*background-size: cover;
-  background-image: url('Images/asmrbg3.jpg');
+  cursor: pointer;
+  min-height: 97vh;
+  border: solid 3px;
+  background-image: url('./Images/bgGif3.gif');
+  /*filter: blur(5px);*/
+  background-size: cover;
   background-position: center center; 
-  min-height: 100vh;*/
-  background:  #336db8;
-  background-image: radial-gradient(circle, black, #0a1627);
-  animation-duration: 8s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  border-color: #BE0028;
 }
 
 .welcome-content.appear {
@@ -100,33 +99,6 @@ header {
   background-color: #232323;
 }
 
-.welcome-title {
-  font-size: 80px;
-  margin-bottom: 20rem;
-  border: 1px;
-  border-radius: 200px;
-  box-shadow: 5px 5px 2px 6px rgba(58, 66, 8, 0.808), 
-              0 0 0 10px rgba(8, 46, 11, 0.644),
-              0 0 0 20px rgba(54, 4, 48, 0.8),
-              0 0 0 30px rgba(168, 85, 30, 0.8);
-  animation: boxShadowAnimation 2s ease-in;
-  position: relative;
-  z-index: 1;
-  color: #474d3a;
-}
-@keyframes boxShadowAnimation {
-  0%, 100% {
-    background-color: transparent; 
-  }
-  50% {
-    background-color: rgba(48, 1, 48, 0.8);
-  }
-}
-
-.welcome-title.animated {
-  animation: boxShadowAnimation 2s ease-in 2s;
-}
-
 .welcome-link {
   display: block;
   font-size: 2rem;
@@ -212,13 +184,13 @@ a {
   position: absolute;font-family: 'Source Sans Pro';
       font-style: normal;
       font-weight: 600;
-      font-size: 28px;
+      font-size: 30px;
       line-height: 35px;
       position: relative;
       position: absolute; height: 70px;left: 0px;top: 0px;background: #FFFFFF;width: 100%;
       border-style: none none solid none;
-      border-color:#BF004A;
-      background: #102036;
+      border-color: #BE0028;
+      background: white;
       /*background:  #336db8;*/
       color: white;
       filter: blur(0);
@@ -227,8 +199,8 @@ a {
 .topbar-btns{
  margin-left:5px;
  margin-top: 10px;
- color: #BE0028;
- background-color: white;
+ color: white;
+ background-color: #BE0028;
  text-shadow: none;
 
 }
@@ -253,12 +225,12 @@ a {
     font-size: 18px;
 }
 
-.welome-table{
+.welome-table-1{
+  margin-left: 5%;
   color:white;
   margin-top: 10%;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 100%;
+  width: 90%;
+  background-color: #BF004A;
 }
 
 .welome-table th, td{
@@ -313,9 +285,19 @@ a {
 }
 
 .column3{
-  animation: cssAnimation 12s linear infinite;
+  animation: cssAnimation 13s linear infinite;
   opacity: 1;
   visibility: visible;
 }
-
+.app-name1{
+  position: absolute;height: 20px;left: 37.14%;right: 26.07%;top: calc(50% - 20px/2);
+        font-family: 'Source Sans Pro';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 28px;
+          line-height: 20px;
+          letter-spacing: -0.588px;
+          cursor: pointer;
+          color: #FFFFFF;
+}
 

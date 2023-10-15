@@ -19,7 +19,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-   
+    border: 3px solid #BF004A;
+    border-radius: 10px;
     opacity: 0.8;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(223, 170, 170, 0.1);

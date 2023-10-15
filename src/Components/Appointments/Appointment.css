@@ -3,15 +3,15 @@
   padding: 0;
   font-family: Arial, sans-serif;
   font-size: 30px;
-  /*background-size: cover;
-  background-image: url('Images/asmrbg3.jpg');
+  background-size: cover;
+  background-color: #ADD8E6;/*url('../Images/bgGif3.gif');*/
   background-position: center center; 
-  min-height: 100vh;*/
-  background:  #336db8;
+  min-height: 100vh;
+  /*background:  #336db8;
   background-image: radial-gradient(circle, black, #0a1627);
   animation-duration: 8s;
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite;*/
 }
 
 .welcome-content.appear {
@@ -92,14 +92,14 @@ header {
   align-items: center;  
 }
 
-.welcome-container {
+/*.welcome-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
   background-color: #232323;
 }
-
+*/
 .welcome-title {
   font-size: 80px;
   margin-bottom: 20rem;

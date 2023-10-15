@@ -185,26 +185,26 @@ const Home = () => {
         <div class="layout-content">
         
         <div class="wrapper">
-        <div class="grid-item" onClick={displayDoc}>
+        <div class="grid-item" style={{backgroundColor:'#E3BC9A'}} onClick={displayDoc}>
             <img class="addDocIcon" src={vDoc} />
                 <div class="heading" onClick={displayDoc}>
-                    <p id="mouse-pinter">View Doctors</p>
+                    <p id="mouse-pinter" style={{color:'white'}}>View Doctors</p>
                 <p class="descriptions">View Doctors Details.</p>
                 </div>
             </div>
 
-            <div class="grid-item" onClick={handleClick7}>
+            <div class="grid-item" style={{backgroundColor:'#ADD8E6'}} onClick={handleClick7}>
             <img class="addDocIcon" src={bookA} />
                 <div class="heading" onClick={handleClick7}>
-                    <p id="mouse-pinter">Appointments</p>
+                    <p id="mouse-pinter"style={{color:'white'}}>Appointments</p>
                 <p class="descriptions">View and Book Appointments.</p>
                 </div>
             </div>
 
-            <div class="grid-item" onClick={handleClick6}>
+            <div class="grid-item" style={{backgroundColor:'#F9E076'}} onClick={handleClick6}>
                 <img class="addDocIcon" src={ASMR}/>
                 <div class="heading" onClick={handleClick6}>
-                    <p id="mouse-pinter">ASMR SLEEP</p>
+                    <p id="mouse-pinter"style={{color:'white'}}>ASMR SLEEP</p>
                 <p class="descriptions">Find sounds and triggers that aid with sleeping</p>
                 </div>
             </div>
@@ -212,7 +212,7 @@ const Home = () => {
             <div class="grid-item" style={{backgroundColor:'#3952db'}} onClick={handleClick2}>
             <img class="addDocIcon" src={anxiety} />
                 <div class="heading" onClick={handleClick2}>
-                    <p id="mouse-pinter">Anxiety</p>
+                    <p id="mouse-pinter"style={{color:'white'}}>Anxiety</p>
                 <p class="descriptions">Learn and inform yourself all about anxiety.</p>
                 </div>
             </div>
@@ -220,7 +220,7 @@ const Home = () => {
             <div class="grid-item" style={{backgroundColor:'lightgreen'}} onClick={handleClick8}>
                 <img class="addDocIcon" src={depressionIcon}/>
                 <div class="heading" onClick={handleClick8}>
-                    <p id="mouse-pinter">Depression</p>
+                    <p id="mouse-pinter"style={{color:'white'}}>Depression</p>
                 <p class="descriptions">Learn and inform yourself all about depression</p>
                 </div>
             </div>
@@ -228,7 +228,7 @@ const Home = () => {
             <div class="grid-item" style={{backgroundColor:'pink'}} onClick={handleClick3}>
                 <img class="addDocIcon" src={helpIcon}/>
                 <div class="heading" onClick={handleClick3}>
-                    <p id="mouse-pinter">OCD</p>
+                    <p id="mouse-pinter"style={{color:'white'}}>OCD</p>
                 <p class="descriptions">Learn and inform yourself all about OCD</p>
                 </div>
             </div>
@@ -236,7 +236,7 @@ const Home = () => {
             <div class="grid-item" style={{backgroundColor:'#cf8de9'}} onClick={handleClick4}>
                 <img class="addDocIcon" src={checkAppointment}/>
                 <div class="heading" onClick={handleClick4}>
-                    <p id="mouse-pinter">Personality Disorder</p>
+                    <p id="mouse-pinter" style={{color:'white'}}>Personality Disorder</p>
                 <p class="descriptions">Learn and inform yourself all about Personality Disorder</p>
                 </div>
             </div>
@@ -244,7 +244,7 @@ const Home = () => {
             <div class="grid-item" style={{backgroundColor:'#cf3556'}} onClick={handleClick5}>
                 <img class="addDocIcon" src={PTSD}/>
                 <div class="heading" onClick={handleClick5}>
-                    <p id="mouse-pinter">PTSD</p>
+                    <p id="mouse-pinter"style={{color:'white'}}>PTSD</p>
                 <p class="descriptions">Learn and inform yourself all about PTSD</p>
                 </div>
             </div>

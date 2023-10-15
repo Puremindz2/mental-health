@@ -3,15 +3,18 @@ import { SupabaseClient } from '@supabase/supabase-js';
 import { supabase } from '../../supabaseClient';
 import appIcon from "../Images/mentalHealthIcon.png";
 import './ViewAppointment.css'
+import backIcon from '../Images/BackIcon.png'
 
 const AppointmentsPage = () => {
   const [appointments, setAppointments] = useState([]);
   const [app_id, setId] = useState([]);
+  const [app_date, setDate] = useState([]);
+  const [app_reason, setReason] = useState([]);
   const supabaseClient = new SupabaseClient('https://heluyldjbfyghwatcrpe.supabase.co', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhlbHV5bGRqYmZ5Z2h3YXRjcnBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYwMDQ0MDQsImV4cCI6MjAxMTU4MDQwNH0.hd4SzvPBf9U5_y4hdiNvHRubtv9Y04ddRBvLx5m6MF4");
 
 
   function handleClick() {
-    window.location.href = '/home';
+    window.location.href = '/Appointment';
   }
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +27,7 @@ const AppointmentsPage = () => {
       const { data, error } = await supabase
       .from('appointments')
       .update({ appstatus: 'cancelled' })
-      .eq('appointment_id', appointmentId);
+      //.eq('appointment_id', appointmentId);
     
 
       if (error) {
@@ -35,7 +38,7 @@ const AppointmentsPage = () => {
       console.log('Appointment cancelled:', data);
       
       // Reload the appointments after cancellation
-      fetchAppointments();
+      //fetchAppointments();
     } catch (error) {
       // Handle error (e.g., display an error message)
       console.error('Error cancelling appointment:', error.message);
@@ -79,10 +82,12 @@ const AppointmentsPage = () => {
 
     // Fetch the user's appointments from the Supabase database
     const fetchAppointments = async () => {
+      const cond = 'appstatus.not.eq.cancelled';
       const { data, error } = await supabaseClient
         .from('appointments')
         .select('*')
-        //.eq(appstatus, 'booked')
+        .neq('appstatus', 'cancelled')
+        //.neg('appstatus', 'cancelled')
         //.eq('user_id', 'e078a3e2-9d3a-4cd0-9d8e-4103ffe57ae8');
 
       if (error) {
@@ -96,17 +101,51 @@ const AppointmentsPage = () => {
     fetchAppointments();
   }, []);
 
+  const filterByDate = async (event) => {
+        event.preventDefault();
+    
+        const { data, error } = await supabaseClient
+    .from('appointments')
+        .select('*')
+        .eq('date', app_date)
+        if (error) {
+          console.error(error);
+          return;
+        }
+    
+        setAppointments(data)
+        // Clear the form fields
+    //window.location.reload();
+      };
+
+    const filterByReason = async (event) => {
+          event.preventDefault();
+      
+          const { data, error } = await supabaseClient
+      .from('appointments')
+        .select('*')
+        .eq('reason', app_reason)
+          if (error) {
+            console.error(error);
+            return;
+          }
+      
+          setAppointments(data)
+          // Clear the form fields
+      //window.location.reload();
+        };
+
   return (
-    <div>
+    <div class='vAppContent'>
       <div class="topbar-container-home">
       <div class="topbar-left-home">
-      <img src={appIcon}/>
-        <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
+      <img src={backIcon} onClick={handleClick}  style={{cursor:'pointer'}}/>
+        <span class="app-name" onClick={handleClick}>Back</span>
 
       </div>
 
       <div style={{position:'absolute', marginLeft:'45%', overflow: 'hidden'}}>
-        <h1> <span> My Appointments</span></h1>
+        <h1 class='mHead'> <span> My Appointments</span></h1>
       </div>
 
       <div class="topbar-right-home">
@@ -131,18 +170,23 @@ const AppointmentsPage = () => {
         )}
     </div>
     <div class='VA-layout'>
+      <br></br><br></br><br></br><br></br><br></br><br></br>
       <form className='viewAppointmentForm'>
+
+      <h3>Filters</h3>
+      <label>Date</label> <input type='date' value={app_date} onChange={(e) => setDate(e.target.value)}></input> <button  onClick={filterByDate}>Search</button><br></br>
+      <label>Reason</label> <input type='text' value={app_reason} onChange={(e) => setReason(e.target.value)}></input> <button  onClick={filterByReason}>Search</button><br></br>
       <table className='viewAppointmentTable' style={{width:'100%'}}>
         <thead>
           <tr>
-            <th style={{border: '1px solid black', backgroundColor: '#ccc'}}>Name</th>
-            <th style={{border: '1px solid black', backgroundColor: '#ccc'}}>Email</th>
-            <th style={{border: '1px solid black', backgroundColor: '#ccc'}}>Date</th>
-            <th style={{border: '1px solid black', backgroundColor: '#ccc'}}>Time</th>
-            <th style={{border: '1px solid black', backgroundColor: '#ccc'}}>Reason</th>
-            <th style={{border: '1px solid black', backgroundColor: '#ccc'}}>Brief</th>
-            <th style={{border: '1px solid black', backgroundColor: '#ccc'}}>Status</th>
-            <th style={{border: '1px solid black', backgroundColor: '#ccc'}}>Comment</th>
+            <th style={{border: '1px solid black', backgroundColor: '#bd396c'}}>Name</th>
+            <th style={{border: '1px solid black', backgroundColor: '#bd396c'}}>Email</th>
+            <th style={{border: '1px solid black', backgroundColor: '#bd396c'}}>Date</th>
+            <th style={{border: '1px solid black', backgroundColor: '#bd396c'}}>Time</th>
+            <th style={{border: '1px solid black', backgroundColor: '#bd396c'}}>Reason</th>
+            <th style={{border: '1px solid black', backgroundColor: '#bd396c'}}>Brief</th>
+            <th style={{border: '1px solid black', backgroundColor: '#bd396c'}}>Status</th>
+            <th style={{border: '1px solid black', backgroundColor: '#bd396c'}}>Comment</th>
           </tr>
         </thead>
         <tbody>
@@ -162,6 +206,8 @@ const AppointmentsPage = () => {
         </tbody>
       </table>
       </form>
+      <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+      <br></br><br></br><br></br><br></br><br></br><br></br>
       </div>
     </div>
   );

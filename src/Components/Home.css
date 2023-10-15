@@ -314,9 +314,9 @@ li button{
 .descriptions{
   margin-top: 5%; margin-bottom:0%;margin-left: 5px;
   font-family: 'Source Sans Pro';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 14px; color: black; 
+                font-weight: bold;
+                /*font-weight: 400;*/
+                font-size: 14px; color: white; 
 }
 
 .layout-content{

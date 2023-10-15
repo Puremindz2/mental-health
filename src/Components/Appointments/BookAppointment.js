@@ -2,6 +2,7 @@ import React, { useState, useHistory } from 'react';
 import { SupabaseClient } from '@supabase/supabase-js';
 import './BookAppointment.css'
 import appIcon from '../Images/mentalHealthIcon.png'
+import backIcon from '../Images/BackIcon.png'
 
 const AppointmentPage = () => {
   const [name, setName] = useState('');
@@ -18,7 +19,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
   };
 
   function handleClick() {
-    window.location.href = "/home";
+    window.location.href = "/Appointment";
   }
 
   const handleMenuClick = (menuItem) => {
@@ -58,7 +59,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     alert('Your appointment has been booked successfully!');
     // Clear the form fields
-    setName('');
+    setName('  ');
     setEmail('');
     setDate('');
     setTime('');
@@ -74,8 +75,8 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
 
       <div class="topbar-container-home">
       <div class="topbar-left-home">
-      <img src={appIcon}/>
-        <span class="app-name" onClick={handleClick}>Pure Minds - Mental Health</span>
+      <img onClick={handleClick} src={backIcon} style={{cursor:'pointer'}}/>
+        <span class="app-name" onClick={handleClick}>Back</span>
 
       </div>
 

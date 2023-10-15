@@ -41,7 +41,7 @@ export default function Account({ session }) {
         break;
       case 'about':
         // Handle about us click
-        history.push("/about");
+        history.push("/AboutUs");
         break;
       default:
         break;
@@ -86,6 +86,7 @@ export default function Account({ session }) {
         setGender(data.gender);
         setAvatarUrl(data.avatar_url);
       }
+      console.log(data)
 
       setLoading(false);
     }

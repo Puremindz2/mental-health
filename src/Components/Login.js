@@ -9,6 +9,7 @@ import appIcon from "./Images/mentalHealthIcon.png";
 import Home from './Home';
 
 const Login = () => {
+  const [user, setUser] = useState([])
   const history = useHistory();
 
   const [email, setEmail] = useState('');
@@ -29,6 +30,9 @@ const Login = () => {
     };
   }, []);
 
+  
+  
+
   function handleClick1() {
     window.location.href = '/AboutUs';
   }
@@ -48,6 +52,21 @@ const Login = () => {
   function fogotPassward() {
     window.location.href = '/forgotpassword';
   }
+
+
+  /*const setUserInfo = async (event) => {
+        event.preventDefault();
+    
+        const { error } = await supabaseClient.from('users').select('*').eq('email',email );
+        if (error) {
+          console.error(error);
+          return;
+        }
+    
+        alert('Your appointment has been updated successfully!');
+        // Clear the form fields
+      };*/
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -61,7 +80,11 @@ const Login = () => {
         console.error('Login error:', error);
         toast.error('Invalid email or password. Please try again.');
       } else {
-        console.log('Logged in user:', user);
+
+        /*useEffect(() => {
+          localStorage.setItem('userInfo', JSON.stringify(notes))
+        }, [notes])
+        console.log('Logged in user:', user);*/
         toast.success('Login successful!');
         // Redirect to the home page after successful login
         window.location.href = '/home'

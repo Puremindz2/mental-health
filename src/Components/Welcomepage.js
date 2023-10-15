@@ -37,12 +37,12 @@ const WelcomePage = () => {
   }
 
   return (
-    <div className="welcome-container">
+    <div className="welcome-container-1">
 
 <div class="welcome-topbar-container">
       <div class="topbar-left">
       <img src={appIcon}/>
-        <span class="app-name">WELCOME</span>
+        <span class="app-name1">Pure Minds </span>
 
       </div>
 
@@ -56,21 +56,21 @@ const WelcomePage = () => {
         <button class="topbar-btns" onClick={handleClick3}>Sign Up</button>
     </div>
     </div>
-      
-        <table class="welome-table">
+    
+        <table class="welome-table-1">
         <tr class="welome-table-headers">
-          <th class="column1">HELLO & WELCOME</th>
-          <th class="column2">FEATURES</th>
+          <th class="column1">FEATURES</th>
+          <th class="column2">HELLO & WELCOME</th>
           <th class="column3">ASMR</th>
         </tr>
         <tr class="welome-table-text">
-          <td class="column1"><img src={appIcon}/> </td>
-          <td class="column2"><img src={features}/></td>
+          <td class="column1"><img src={features}/> </td>
+          <td class="column2"><img src={appIcon}/></td>
           <td class="column3"><img src={asmr}/></td>
         </tr>
         <tr class="welome-table-text">
-          <td class="column1">Welcome to the Mental Health Application. Access a plethora of feature s that aims on helping and educating and individual on various mental heath issues.</td>
-          <td class="column2">Features may include the following:<br></br>1. Get access to materials that assist in various mental health issues like PTSD, OCD, Anxiety, Depression amoung others.<br></br>2. You'll also be able to get access to professional help by contacting a doctor</td>
+          <td class="column1">Comprehensive Mental Health resources<br></br>Connect with Professionals<br></br>Get Help with Chatbot</td>
+          <td class="column2">This is a safe space where you can explore, learn on your journey to a better mental health.</td>
           <td class="column3">Listen to ASMR sounds that are proven to help with sleeping.</td>
         </tr>
         </table>

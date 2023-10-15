@@ -119,6 +119,7 @@ const Login = () => {
         <p>The hardest choices require the strongest wills</p>
         <p>moshemahlaela777.com</p>
         <p><button class="button">Contact</button></p>
+        <br></br>
       </div>
     </div>
   </div>
@@ -145,6 +146,7 @@ const Login = () => {
         <p>Take all you can and give nothing back</p>
         <p>vanessa0zitha@gmail.com</p>
         <p><button class="button">Contact</button></p>
+        <br></br>
       </div>
     </div>
   </div>

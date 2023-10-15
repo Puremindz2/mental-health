@@ -4,6 +4,7 @@ import './Appointment.css';
 import appIcon from "../Images/mentalHealthIcon.png";
 import bookA from "../Images/bookA.png";
 import viewA from "../Images/viewA.png";
+import backIcon from '../Images/BackIcon.png'
 
 const WelcomePage = () => {
   const history = useHistory();
@@ -72,8 +73,8 @@ const WelcomePage = () => {
 
 <div class="topbar-container">
       <div class="topbar-left">
-      <img src={appIcon}/>
-        <span class="app-name" onClick={handleClick}>Pure Minds</span>
+      <img src={backIcon} onClick={handleClick}  style={{cursor:'pointer'}}/>
+        <span class="app-name" onClick={handleClick}>Back</span>
 
       </div>
 
@@ -115,8 +116,8 @@ const WelcomePage = () => {
           <td class="table-image"><img src={viewA} onClick={handleClick4}/></td>
         </tr>
         <tr class="welome-table-text">
-          <td>View Appointments that you have booked.</td>
-          <td>Book a new Appointment</td>
+          <td>View Appointments.</td>
+          <td>Book Appointment.</td>
         </tr>
         </table>
       

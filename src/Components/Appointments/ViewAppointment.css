@@ -1,18 +1,23 @@
 .VA-layout{
   min-height: fit-content;
-  background-color:#f1c0e3;
+  /*background-color:#f1c0e3;*/
 }
 
 .viewAppointmentForm {
-  margin-top: 20%;
-  width: 100%;
+  margin-top: 10%;
+  width: 90%;
   border-collapse: collapse;
   background-color: white;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 30%;
 }
 
 .viewAppointmentForm {
-  border: 1px solid black;
+  border: 3px solid #BF004A;
+  border-radius: 10px;
   padding: 5px;
+  
 }
 
 .viewAppointmentForm th {
@@ -20,6 +25,19 @@
 }
 
 .viewAppointmentForm tr:nth-child(even) {
-  background-color: #eee;
+  background-color: #2663b3;
 }
 
+
+.mHead{
+ color:#bd396c ;
+}
+.vAppContent{
+  background-image: url('../Images/bgGif7.gif');
+  /*filter: blur(5px);*/
+  background-size: cover;
+  background-position: center center; 
+  min-height: 100hv;
+  margin-top: -3.7%;
+
+}
