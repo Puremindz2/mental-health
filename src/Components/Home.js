@@ -3,15 +3,15 @@ import './Home.css';
 import { Link, useHistory } from 'react-router-dom'; //Import useHistory
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import mentalHealthIcon from "./Images/mentalHealthIcon.png";
-import anxiety from "./Images/blue.jpg"
-import depressionIcon from "./Images/green.jpg";
-import helpIcon from "./Images/pink.jpg";
-import checkAppointment from "./Images/purple.jpg";
+import anxiety from "./Images/blue.png"
+import depressionIcon from "./Images/green.png";
+import helpIcon from "./Images/pink.png";
+import checkAppointment from "./Images/purple.png";
 import appIcon from './Images/mentalHealthIcon.png' 
-import PTSD from "./Images/red.jpg"
+import PTSD from "./Images/red.png"
 import ASMR from "./Images/asmricon.png"
 import vDoc from "./Images/doctor.jpg"
-import bookA from "./Images/bookA.jpg"
+import bookA from "./Images/bookA.png"
 import Aboutus from "./AboutUs"
 
 const Home = () => {

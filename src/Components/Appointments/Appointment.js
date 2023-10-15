@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './Appointment.css';
 import appIcon from "../Images/mentalHealthIcon.png";
-import bookA from "../Images/bookA.jpg";
-import viewA from "../Images/viewA.jpg";
+import bookA from "../Images/bookA.png";
+import viewA from "../Images/viewA.png";
 
 const WelcomePage = () => {
   const history = useHistory();

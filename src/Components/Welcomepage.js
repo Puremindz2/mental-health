@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Welcomepage.css';
 import appIcon from "./Images/mentalHealthIcon.png";
-import features from "./Images/features.jpg";
+import features from "./Images/features.png";
 import asmr from "./Images/asmrbg.jpg";
 
 const WelcomePage = () => {
@@ -42,7 +42,7 @@ const WelcomePage = () => {
 <div class="welcome-topbar-container">
       <div class="topbar-left">
       <img src={appIcon}/>
-        <span class="app-name">Pure Minds </span>
+        <span class="app-name">WELCOME</span>
 
       </div>
 

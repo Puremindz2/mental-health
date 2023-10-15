@@ -72,6 +72,7 @@ const AppointmentsPage = () => {
     
         alert('Your appointment has been updated successfully!');
         // Clear the form fields
+    window.location.reload();
       };
 
   useEffect(() => {
@@ -81,7 +82,7 @@ const AppointmentsPage = () => {
       const { data, error } = await supabaseClient
         .from('appointments')
         .select('*')
-        .eq('appstatus', 'booked')
+        //.eq(appstatus, 'booked')
         //.eq('user_id', 'e078a3e2-9d3a-4cd0-9d8e-4103ffe57ae8');
 
       if (error) {
@@ -155,13 +156,7 @@ const AppointmentsPage = () => {
               <td style={{width:'10%', border: '1px solid black'}}>{appointment.brief}</td>
               <td style={{width:'10%', border: '1px solid black'}}>{appointment.appstatus}</td>
               <td style={{width:'30%', border: '1px solid black'}}>{appointment.comment}</td>
-<<<<<<< Updated upstream
-              <td><button onClick={() => cancelAppointment(appointment.id)}>Cancel Appointment</button></td>
-         
-              <td></td>
-=======
               <td style={{width:'30%', border: '1px solid black'}}><button onClick={cancelApp}>Cancel</button></td>
->>>>>>> Stashed changes
             </tr>
           ))}
         </tbody>
