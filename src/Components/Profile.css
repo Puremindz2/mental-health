@@ -218,3 +218,22 @@
     color: 
     #fcfafaea; 
   }
+
+  .forgetPasswordBgImage{
+    background-image: url('./Images/BGforgotpass.jpeg');
+    background-size: cover;
+    background-position: center center; 
+    min-height: 100vh;
+    margin-top: -2%;
+    
+  }
+
+  .fgt-content label, h2, input{
+    color: white;
+    align-items: start;
+    margin-left: 1%;
+    
+
+    
+    
+  }

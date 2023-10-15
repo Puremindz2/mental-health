@@ -1,14 +1,14 @@
-.welcome-container {
+.welcome-container-1 {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   font-size: 30px;
-  /*background-size: cover;
-  background-image: url('Images/asmrbg3.jpg');
+  background-size: cover;
+  background-image: url('Images/bgGif5.gif');
   background-position: center center; 
-  min-height: 100vh;*/
-  background:  #336db8;
-  background-image: radial-gradient(circle, black, #0a1627);
+  min-height: 100vh;
+ /* background:  #336db8;
+  background-image: radial-gradient(circle, black, #0a1627);*/
   animation-duration: 8s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;

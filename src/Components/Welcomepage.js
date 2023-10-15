@@ -37,7 +37,7 @@ const WelcomePage = () => {
   }
 
   return (
-    <div className="welcome-container">
+    <div className="welcome-container-1">
 
 <div class="welcome-topbar-container">
       <div class="topbar-left">
