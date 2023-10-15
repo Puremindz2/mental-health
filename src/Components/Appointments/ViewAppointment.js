@@ -6,6 +6,9 @@ import './ViewAppointment.css'
 
 const AppointmentsPage = () => {
   const [appointments, setAppointments] = useState([]);
+  const [app_id, setId] = useState([]);
+  const supabaseClient = new SupabaseClient('https://heluyldjbfyghwatcrpe.supabase.co', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhlbHV5bGRqYmZ5Z2h3YXRjcnBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYwMDQ0MDQsImV4cCI6MjAxMTU4MDQwNH0.hd4SzvPBf9U5_y4hdiNvHRubtv9Y04ddRBvLx5m6MF4");
+
 
   function handleClick() {
     window.location.href = '/home';
@@ -58,8 +61,20 @@ const AppointmentsPage = () => {
     }
   };
 
+  const cancelApp = async (event) => {
+        event.preventDefault();
+    
+        const { error } = await supabaseClient.from('appointments').update({appstatus: 'cancelled'}).eq('id',app_id );
+        if (error) {
+          console.error(error);
+          return;
+        }
+    
+        alert('Your appointment has been updated successfully!');
+        // Clear the form fields
+      };
+
   useEffect(() => {
-    const supabaseClient = new SupabaseClient('https://heluyldjbfyghwatcrpe.supabase.co', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhlbHV5bGRqYmZ5Z2h3YXRjcnBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTYwMDQ0MDQsImV4cCI6MjAxMTU4MDQwNH0.hd4SzvPBf9U5_y4hdiNvHRubtv9Y04ddRBvLx5m6MF4");
 
     // Fetch the user's appointments from the Supabase database
     const fetchAppointments = async () => {
@@ -131,7 +146,7 @@ const AppointmentsPage = () => {
         </thead>
         <tbody>
           {appointments.map((appointment) => (
-            <tr key={appointment.id}>
+            <tr key={appointment.id} onMouseOver={(e) => setId(appointment.id)}>
               <td style={{width:'15%', border: '1px solid black'}}>{appointment.name}</td>
               <td style={{width:'15%', border: '1px solid black'}}>{appointment.email}</td>
               <td style={{width:'10%', border: '1px solid black'}}>{appointment.date}</td>
@@ -140,9 +155,13 @@ const AppointmentsPage = () => {
               <td style={{width:'10%', border: '1px solid black'}}>{appointment.brief}</td>
               <td style={{width:'10%', border: '1px solid black'}}>{appointment.appstatus}</td>
               <td style={{width:'30%', border: '1px solid black'}}>{appointment.comment}</td>
+<<<<<<< Updated upstream
               <td><button onClick={() => cancelAppointment(appointment.id)}>Cancel Appointment</button></td>
          
               <td></td>
+=======
+              <td style={{width:'30%', border: '1px solid black'}}><button onClick={cancelApp}>Cancel</button></td>
+>>>>>>> Stashed changes
             </tr>
           ))}
         </tbody>
